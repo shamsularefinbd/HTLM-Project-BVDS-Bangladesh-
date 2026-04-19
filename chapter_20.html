@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 20 - Responsive CSS</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 20</h1>
+        <p style="font-size: 21px; color: white">Semantic Html</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#ResponsiveWebpage">1. Responsive Webpage</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="ResponsiveWebpage" class="content-section">
+          <h3>1. Responsive Webpage</h3>
+          <p>
+            Responsive web design is an approach to web development that aims to
+            create websites that provide an optimal viewing experience across a
+            wide range of devices, from desktop computers to mobile phones. The
+            goal of responsive web design is to ensure that a website's layout
+            and content adapt seamlessly to different screen sizes and
+            orientations, providing users with a consistent and user-friendly
+            experience regardless of the device they are using.
+            <br />
+            <!doctype html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8" />
+                <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0"
+                />
+                <title>Simple Book Library</title>
+
+                <style>
+                  header {
+                    background: #2c3e50 !important;
+                    padding: 15px 50px !important;
+                  }
+
+                  .newnav {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                  }
+
+                  .logo {
+                    color: white !important;
+                    font-size: 22px !important;
+                    font-weight: bold !important;
+                  }
+
+                  .newnav ul {
+                    list-style: none !important;
+                    display: flexv !important;
+                    gap: 20px;
+                  }
+
+                  .newnav ul li a {
+                    color: white !important;
+                    text-decoration: none !important;
+                    font-size: 16px !important;
+                  }
+
+                  .hero {
+                    background: #f4f4f4 !important;
+                    padding: 60px 20px !important;
+                    text-align: center !important;
+                  }
+
+                  .hero h1 {
+                    font-size: 36px !important;
+                    margin-bottom: 15px !important;
+                  }
+
+                  .pw {
+                    font-size: 18px !important;
+                    color: #555 !important;
+                  }
+
+                  .books {
+                    padding: 50px 20px !important;
+                  }
+
+                  .book-grid {
+                    display: flex !important;
+                    gap: 20px !important;
+                    justify-content: center !important;
+                    flex-wrap: wrap !important;
+                  }
+
+                  .book-card {
+                    background: white !important;
+                    width: 250px !important;
+                    padding: 15px;
+                    border-radius: 8px !important;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+                    text-align: center !important;
+                    transition: 0.3s !important;
+                  }
+
+                  .book-card:hover {
+                    transform: translateY(-5px) !important;
+                  }
+
+                  .book-card img {
+                    width: 100% !important;
+                    height: 300px !important;
+                    object-fit: cover !important;
+                    border-radius: 5px !important;
+                  }
+
+                  .book-card h4 {
+                    margin: 15px 0 5px !important;
+                  }
+
+                  .pp {
+                    color: #777 !important;
+                    font-size: 14px !important;
+                    text-align: center !important;
+                  }
+
+                  .ff {
+                    background: #2c3e50 !important;
+                    color: white !important;
+                    text-align: center !important;
+                    padding: 20px !important;
+                    margin-top: 40px !important;
+                  }
+
+                  @media (max-width: 760px) {
+                    .newnav {
+                      flex-direction: column;
+                      gap: 10px;
+                    }
+
+                    .hero h1 {
+                      font-size: 28px;
+                    }
+                  }
+
+                  @media (max-width: 480px) {
+                    header {
+                      padding: 15px 20px;
+                    }
+
+                    .hero {
+                      padding: 40px 15px;
+                    }
+
+                    .book-card {
+                      width: 90%;
+                    }
+                  }
+                </style>
+              </head>
+              <body>
+                <header>
+                  <nav class="newnav" style="background-color: #2c3e50">
+                    <div class="logo">My Library</div>
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Books</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </nav>
+                </header>
+                <section class="hero">
+                  <h1>Welcome to Our Book Library</h1>
+                  <p style="text-align: center">
+                    Discover your next favorite book today.
+                  </p>
+                </section>
+
+                <section class="books">
+                  <div class="book-grid">
+                    <div class="book-card">
+                      <img
+                        src="Images/book 02.jpg"
+                        alt="The Chronicles of Necrus"
+                      />
+                      <h4>The Chronicles of Necrus</h4>
+                      <p class="pp">Srikanta</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 03.jpg"
+                        alt="The Chronicles of Metallum"
+                      />
+                      <h4>The Chronicles of Metallum</h4>
+                      <p class="pp"> Padma Nadir Majhi</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 04.jpg"
+                        alt="The Chronicles of Spectra"
+                      />
+                      <h4>The Chronicles of Spectra</h4>
+                      <p class="pp">Vampire Academy</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 06.jpg"
+                        alt="The Chronicles of Chronos"
+                      />
+                      <h4>The Chronicles of Chronos</h4>
+                      <p class="pp">The Magicians</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 07.jpg"
+                        alt="The Chronicles of Luminar"
+                      />
+                      <h4>The Chronicles of Luminar</h4>
+                      <p class="pp">Red Sister</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 08.webp"
+                        alt="The Chronicles of Terran"
+                      />
+                      <h4>The Chronicles of Terran</h4>
+                      <p class="pp">Scholomance</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 10.jpg"
+                        alt="The Chronicles of Aqualon"
+                      />
+                      <h4>The Chronicles of Aqualon</h4>
+                      <p class="pp">Harry Potter Series</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 11.jpg"
+                        alt="The Chronicles of Ignis"
+                      />
+                      <h4>The Chronicles of Ignis</h4>
+                      <p class="pp">Higher Maths</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 02.jpg"
+                        alt="The Chronicles of Volgos"
+                      />
+                      <h4>The Chronicles of Volgos</h4>
+                      <p class="pp">Chemistry</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 03.jpg"
+                        alt="The Chronicles of Aeridor"
+                      />
+                      <h4>The Chronicles of Aeridor</h4>
+                      <p class="pp">Physics</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 04.jpg"
+                        alt="The Chronicles of Somnus"
+                      />
+                      <h4>The Chronicles of Somnus</h4>
+                      <p class="pp">Political Science</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 11.jpg"
+                        alt="The Chronicles of Veridas"
+                      />
+                      <h4>The Chronicles of Veridas</h4>
+                      <p class="pp">Islam</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 10.jpg"
+                        alt="The Chronicles of Fractus"
+                      />
+                      <h4>The Chronicles of Fractus</h4>
+                      <p class="pp">Science</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 09.jpg"
+                        alt="The Chronicles of Voidus"
+                      />
+                      <h4>The Chronicles of Voidus</h4>
+                      <p class="pp">History</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/Baby_tree.jpg"
+                        alt="The Chronicles of Chimaera"
+                      />
+                      <h4>The Chronicles of Chimaera</h4>
+                      <p class="pp">Social Science</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 07.jpg"
+                        alt="The Chronicles of Noctis"
+                      />
+                      <h4>The Chronicles of Noctis</h4>
+                      <p class="pp">Mathematics</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 08.webp"
+                        alt="The Chronicles of Pyros"
+                      />
+                      <h4>The Chronicles of Pyros</h4>
+                      <p class="pp">English</p>
+                    </div>
+
+                    <div class="book-card">
+                      <img
+                        src="Images/book 10.jpg"
+                        alt="The Chronicles of Gaia"
+                      />
+                      <h4>The Chronicles of Gaia</h4>
+                      <p class="pp">Bangla</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section
+                  class="ff"
+                  style="align-items: center; background-color: #2c3e50"
+                >
+                  <p
+                    style="
+                      color: white;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    © 2026 My Library | All Rights Reserved
+                  </p>
+                </section>
+              </body>
+            </html>
+          </p>
+        </section>
+
+        <div class="button">
+          <a href="chapter_19.html" class="btn">&#8592; Previous</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 14 - CSS Text</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: kalpurush, sans-serif;
+  background-color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.text-color {
+  color: chartreuse !important;  
+  margin: 10px;
+  border: 1px solid chartreuse !important;
+  padding: 5px;
+}
+
+.text-decoration {
+  text-decoration-line: underline;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.text-decoration-line-through {
+  text-decoration-line: line-through;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.text-decoration-overline {
+  text-decoration-line: overline underline;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.text-transform-lowercase {
+  text-transform: lowercase;
+  margin: 10px;
+  border: 1px solid rchartreuseed;
+  padding: 5px;
+}
+
+.text-transform-capitalize {
+  text-transform: capitalize;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.whitespace-pre {
+  white-space: pre;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+  margin: 10px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+}
+
+.text-overflow {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px solid chartreuse;
+  padding: 5px;
+  margin: 10px;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+  width: 200px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+  margin: 10px;
+}
+
+.word-break {
+  word-break: break-all;
+  width: 200px;
+  border: 1px solid chartreuse;
+  padding: 5px;
+  margin: 10px;
+}
+
+.letter-spacing {
+  letter-spacing: 2px; 
+  border: 1px solid chartreuse;
+  margin: 10px;
+}
+
+.word-spacing {
+  word-spacing: 10px; 
+  border: 1px solid chartreuse;
+  margin: 10px;
+}
+
+.line-height {
+  line-height: 3; 
+  border: 1px solid chartreuse;
+  margin: 10px;
+}
+.text-align-justify {
+  text-align: justify;
+  border: 1px solid chartreuse;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-align-center {
+  text-align: center;
+  border: 1px solid chartreuse;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-align-right {
+  text-align: right;
+  border: 1px solid chartreuse;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-indent {
+  text-indent: 50px; 
+  border: 1px solid chartreuse;
+  margin: 10px;
+  padding: 10px;
+}
+.font-family-sans-serif {
+  font-family: Arial, sans-serif;
+}
+.font-family-serif {
+  font-family: Georgia, serif;
+}
+.font-family-monospace {
+  font-family: "Courier New", monospace;
+}
+.font-size-small {
+  font-size: 12px !important;
+}
+.font-size-medium {
+  font-size: 16px !important;
+}
+.font-size-large {
+  font-size: 24px !important;
+}
+.font-weight-normal {
+  font-weight: normal;
+}
+.font-weight-bold {
+  font-weight: bold;
+}
+.font-weight-bolder {
+  font-weight: bolder !important;
+}
+.font-style-normal {
+  font-style: normal;
+}
+.font-style-italic {
+  font-style: italic;
+}
+.font-style-oblique {
+  font-style: oblique;
+}
+.font-variant-normal {
+  font-variant: normal;
+}
+.font-variant-small-caps {
+  font-variant: small-caps;
+}
+.font-variant-all-small-caps {
+  font-variant: all-small-caps;
+}
+
+@font-face {
+  font-family: "CustomFont1"; 
+  src: url("https://fonts.gstatic.com/s/playwritecuguides/v1/37ONm_796B033pS5H71r52z3Y2X30E9zN30G.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.custom-font-1 {
+  font-family: "CustomFont1"!important;
+}
+
+@font-face {
+  font-family: "CustomFont2" !important;
+  src: url("https://example.com/fonts/customfont2.woff") format("woff");
+}
+.custom-font-2 {
+  font-family: "CustomFont2" !important;
+}
+
+@font-face {
+  font-family: "CustomFont3" !important;
+  src: url("https://example.com/fonts/customfont3.woff") format("woff");
+}
+.custom-font-3 {
+  font-family: "CustomFont3", Arial, sans-serif !important;
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 14</h1>
+        <p style="font-size: 21px; color: white">Text Properties</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid red;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#TextRendering">1. Text Rendering</a></li>
+            <li>
+              <a href="#TextSpacing">2. Text Spacing</a>
+            </li>
+            <li>
+              <a href="#TextPosition">3. Text Position</a>
+            </li>
+            <li>
+              <a href="#CSSFonts">4. CSS Fonts</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="TextRendering" class="content-section">
+          <h3>1. Text Rendering</h3>
+          <p>
+            Text rendering properties in CSS allow you to control how text is
+            displayed on a webpage. For example, the &lt;text-rendering&gt;
+            property can be used to optimize the legibility or speed of text
+            rendering, while the &lt;font-smoothing&gt; property can be used to
+            control the anti-aliasing of text. These properties can help improve
+            the readability and visual appeal of text on a webpage.
+            <br>
+            <div id="textRendering">
+          <hr />
+          <br />
+          <h4>Text Color</h4>
+          <p class="text-color">This is tomato-colored text.</p>
+          <h4>Text Decoration</h4>
+
+          <p class="text-decoration">This text is underlined.</p>
+          <h4>Text Decoration:line through</h4>
+
+          <p class="text-decoration-line-through">This text is line-through.</p>
+          <h4>Text Decoration:line Overline</h4>
+
+          <p class="text-decoration-overline">This text is overlined.</p>
+          <h4>Text-Transform-Uppercase</h4>
+
+          <p class="text-transform-uppercase">
+            this text is transformed to uppercase.
+          </p>
+          <h4>Text-Transform-Lowercase</h4>
+
+          <p class="text-transform-lowercase">
+            THIS TEXT IS TRANSFORMED TO LOWERCASE.
+          </p>
+          <h4>Text-Transform-Capitalize</h4>
+
+          <p class="text-transform-capitalize">
+            this text is transformed to capitalize.
+          </p>
+          <h4>Whitespace-pre</h4>
+
+          <p class="whitespace-pre">
+            This text will preserve whitespaces and line breaks.
+          </p>
+          <h4>Whitespace-pre-line</h4>
+
+          <p class="whitespace-pre-line">
+            This text will preserve whitespaces but collapse line breaks.
+          </p>
+          <h4>Text-Over Flow</h4>
+          <p class="text-overflow">
+            This is an example of text overflow. The text will be truncated with
+            an ellipsis if it exceeds the container width.
+          </p>
+
+          <h4>Word Warp</h4>
+
+          <p class="word-wrap">
+            This is a long word that will wrap to the next line if it exceeds
+            the container width.
+          </p>
+          <h4>Word Break</h4>
+
+          <p class="word-break">
+            This is a long word that will break at any point if it exceeds the
+            container width.
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.text-color {
+  color: red !important;  
+  margin: 10px;
+  border: 1px solid red !important;
+  padding: 5px;
+}
+
+.text-decoration {
+  text-decoration-line: underline;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.text-decoration-line-through {
+  text-decoration-line: line-through;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.text-decoration-overline {
+  text-decoration-line: overline underline;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.text-transform-lowercase {
+  text-transform: lowercase;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.text-transform-capitalize {
+  text-transform: capitalize;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.whitespace-pre {
+  white-space: pre;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+  margin: 10px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.text-overflow {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px solid red;
+  padding: 5px;
+  margin: 10px;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+  width: 200px;
+  border: 1px solid red;
+  padding: 5px;
+  margin: 10px;
+}
+ 
+.word-break {
+  word-break: break-all;
+  width: 200px;
+  border: 1px solid red;
+  padding: 5px;
+  margin: 10px;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="TextSpacing" class="content-section">
+          <h3>2. Text Spacing</h3>
+          <p>
+            Text spacing properties in CSS allow you to control the spacing
+            between characters, words, and lines of text. For example, the
+            &lt;letter-spacing&gt; property can be used to adjust the spacing
+            between characters, while the &lt;word-spacing&gt; property can be
+            used to adjust the spacing between words. The &lt;line-height&gt;
+            property can be used to control the spacing between lines of text.
+            These properties can help improve the readability and visual appeal
+            of text on a webpage.
+            <br>
+          <div id="textSpacing">
+          <hr />
+          <br />
+          <h4>Letter-Spacing</h4>
+
+          <p class="letter-spacing">This text has increased letter spacing.</p>
+          <br />
+          <h4>Word-Spacing</h4>
+
+          <p class="word-spacing">This text has increased word spacing.</p>
+          <br />
+          <h4>Line-Spacing</h4>
+
+          <p class="line-height">
+            This text has increased line height. The spacing between the lines
+            of text is adjusted to make it more readable and visually appealing.
+            Line height is especially useful when dealing with large blocks of
+            text.
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.letter-spacing {
+  letter-spacing: 2px; 
+  border: 1px solid red;
+  margin: 10px;
+}
+
+.word-spacing {
+  word-spacing: 10px; 
+  border: 1px solid red;
+  margin: 10px;
+}
+
+.line-height {
+  line-height: 3; 
+  border: 1px solid red;
+  margin: 10px;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="TextPosition" class="content-section">
+          <h3>3. Text Position</h3>
+          <p>
+            Text position properties in CSS allow you to control the alignment and
+            indentation of text. For example, the &lt;text-align&gt; property can
+            be used to align text to the left, right, center, or justify it
+            across the width of a container. The &lt;text-indent&gt; property can
+            be used to create an indentation at the beginning of a paragraph.
+            These properties can help improve the readability and visual appeal
+            of text on a webpage.
+            <hr>
+            <br>
+          <div id="textPosition">
+          <hr />
+          <br />
+          <h2>Text Align</h2>
+          <br />
+          <h4>Justify</h4>
+          <p class="text-align-justify">
+            This text is justified. Justified text is spaced so that the left
+            and right sides of the text block both have a clean edge. This is
+            often used in newspapers and books.
+          </p>
+          <br />
+          <h4>Center</h4>
+          <p class="text-align-center">
+            This text is centered. Centered text is aligned to the middle of the
+            container. This is useful for headings or emphasizing important
+            information.
+          </p>
+          <br />
+          <h4>Right Align</h4>
+          <p class="text-align-right">
+            This text is aligned to the right. Right-aligned text is aligned to
+            the right edge of the container. This can be useful for specific
+            design requirements.
+          </p>
+          <br />
+          <h4>Text Indent</h4>
+          <p class="text-indent">
+            This text has an indentation of 50 pixels. Indenting text is often
+            used in paragraphs at the beginning of a section or for quotations.
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.line-height {
+  line-height: 3; 
+  border: 1px solid red;
+  margin: 10px;
+}
+.text-align-justify {
+  text-align: justify;
+  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-align-center {
+  text-align: center;
+  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-align-right {
+  text-align: right;
+  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-indent {
+  text-indent: 50px; 
+  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSFonts" class="content-section">
+          <h3>4. CSS Fonts</h3>
+          <p>
+            CSS font properties allow you to control the appearance of text on a
+            webpage. For example, the &lt;font-family&gt; property can be used to
+            specify the font type, while the &lt;font-size&gt; property can be
+            used to adjust the size of the text. The &lt;font-weight&gt;
+            property can be used to make text bold or lighter, and the
+            &lt;font-style&gt; property can be used to italicize text. These
+            properties can help improve the readability and visual appeal of text
+            on a webpage.
+            <br>
+          <div id="cssFonts">
+          <hr />
+          <br />
+          <h4>Font Family</h4>
+
+          <p class="font-family-sans-serif">
+            This text is displayed in a sans-serif font (Arial).
+          </p>
+          <p class="font-family-serif">
+            This text is displayed in a serif font (Georgia).
+          </p>
+          <p class="font-family-monospace">
+            This text is displayed in a monospace font (Courier New).
+          </p>
+          <p class="custom-font-1">
+            This text is displayed in a custom font (CustomFont1).
+          </p>
+          <p class="custom-font-2">
+            This text is displayed in a custom font (CustomFont2).
+          </p>
+          <p class="custom-font-3">
+            This text is displayed in a custom font (CustomFont3).
+          </p>
+          <br />
+          <h4>Font Size</h4>
+          <p class="font-size-small">This text is small (12px).</p>
+          <p class="font-size-medium">This text is medium (16px).</p>
+          <p class="font-size-large">This text is large (24px).</p>
+          <br />
+          <h4>Font Weight</h4>
+          <p class="font-weight-normal">This text has normal weight.</p>
+          <p class="font-weight-bold">This text is bold.</p>
+          <p class="font-weight-bolder">This text is bolder than bold.</p>
+          <br />
+          <h4>Font Style</h4>
+          <p class="font-style-normal">This text has normal font style.</p>
+          <p class="font-style-italic">This text is italicized.</p>
+          <p class="font-style-oblique">This text is oblique.</p>
+          <br />
+          <h4>Font Variant</h4>
+          <p class="font-variant-normal">This text has normal font variant.</p>
+          <p class="font-variant-small-caps">
+            This text is displayed in small caps.
+          </p>
+          <p class="font-variant-all-small-caps">
+            This text is displayed in all small caps.
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.font-family-sans-serif {
+  font-family: Arial, sans-serif;
+}
+.font-family-serif {
+  font-family: Georgia, serif;
+}
+.font-family-monospace {
+  font-family: "Courier New", monospace;
+}
+.font-size-small {
+  font-size: 12px;
+}
+.font-size-medium {
+  font-size: 16px;
+}
+.font-size-large {
+  font-size: 24px;
+}
+.font-weight-normal {
+  font-weight: normal;
+}
+.font-weight-bold {
+  font-weight: bold;
+}
+.font-weight-bolder {
+  font-weight: bolder;
+}
+.font-style-normal {
+  font-style: normal;
+}
+.font-style-italic {
+  font-style: italic;
+}
+.font-style-oblique {
+  font-style: oblique;
+}
+.font-variant-normal {
+  font-variant: normal;
+}
+.font-variant-small-caps {
+  font-variant: small-caps;
+}
+.font-variant-all-small-caps {
+  font-variant: all-small-caps;
+}
+@font-face {
+  font-family: "CustomFont1";
+  src: url("https://example.com/fonts/customfont1.woff") format("woff");
+}
+.custom-font-1 {
+  font-family: "CustomFont1", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "CustomFont2";
+  src: url("https://example.com/fonts/customfont2.woff") format("woff");
+}
+.custom-font-2 {
+  font-family: "CustomFont2", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "CustomFont3";
+  src: url("https://example.com/fonts/customfont3.woff") format("woff");
+}
+.custom-font-3 {
+  font-family: "CustomFont3", Arial, sans-serif;
+}</code></pre>
+          </div>
+        </section>
+
+        <div class="button">
+          <a href="chapter_13.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_15.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+   <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

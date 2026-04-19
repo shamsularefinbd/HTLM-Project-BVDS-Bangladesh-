@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 12 - CSS Box Model</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+          .content-box {
+      width: 200px;
+      padding: 20px;
+      border: 10px solid chartreuse;
+      box-sizing: content-box;
+    }
+
+    .border-box {
+      width: 200px;
+      padding: 20px;
+      border: 10px solid chartreuse;
+      box-sizing: border-box;
+    }
+
+    .margin-standard {
+      margin: 50px;
+      border: 1px solid chartreuse;
+      background-color: black;
+    }
+
+    .margin-auto {
+      width: 50%;
+      margin: 0 auto;
+      border: 1px solid chartreuse;
+      background-color: black;
+    }
+
+    .collapse-one {
+      margin-bottom: 50px;
+      background-color: chartreuse;
+      height: 50px;
+    }
+
+    .collapse-two {
+      margin-top: 30px;
+      background-color: chartreuse;
+      height: 50px;
+    }
+
+    .outline-example {
+      border: 5px solid black;
+      outline: 5px dashed chartreuse;
+      outline-offset: 5px;
+      margin: 20px;
+    }
+
+    .border-style {
+      border-width: 5px;
+      border-style: double;
+      border-color: chartreuse;
+    }
+
+    .border-radius {
+      border: 2px solid chartreuse;
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    .padding-example {
+      border: 1px solid black;
+      padding: 50px;
+      background-color: chartreuse;
+    }
+
+    .dimension-fixed {
+      width: 300px;
+      height: 100px;
+      background-color: chartreuse;
+    }
+
+    .dimension-percent {
+      width: 50%;
+      height: 50px;
+      background-color: chartreuse    }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 12</h1>
+        <p style="font-size: 21px; color: white">CSS Box Model</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid red;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#BoxSizingType">1. Box Sizing Type</a></li>
+            <li>
+              <a href="#CSSMargin">2. CSS Margin</a>
+            </li>
+            <li>
+              <a href="#CSSOutline">3. CSS Outline</a>
+            </li>
+            <li>
+              <a href="#CSSBorder">4. CSS Border</a>
+            </li>
+            <li>
+              <a href="#CSSPadding">5. CSS Padding</a>
+            </li>
+            <li>
+              <a href="#CSSWidthHeight">6. CSS Width And Height</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="BoxSizingType" class="content-section">
+          <h3>1. Box Sizing Types</h3>
+          <p>
+            The box-sizing property in CSS determines how the total width and
+            height of an element are calculated. There are two main values for
+            this property: content-box and border-box. By default, elements use
+            the content-box value, which means that the width and height
+            properties only apply to the content area of the element, excluding
+            padding and borders. On the other hand, when using border-box, the
+            width and height properties include the content, padding, and
+            borders. This makes it easier to manage layouts, as the total size
+            of the element remains consistent regardless of padding or border
+            changes.
+            <br>
+            <div class="example">
+              <div class="content-box">I am Content Box (Wider)</div><br>
+              <div class="border-box">I am Border Box (Exact Width)</div><br>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>/* Total Width = 200px + 40px (padding) + 20px (border) = 260px */
+.content-box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid red;
+  box-sizing: content-box;
+}
+
+/* Total Width = 200px (Padding and Border are included inside) */
+.border-box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid red; 
+  box-sizing: border-box;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSMargins" class="content-section">
+          <h3>2. CSS Margins</h3>
+          <p>
+            Margins in CSS are used to create space around elements, outside of
+            any defined borders. The margin property can be set to a specific
+            value (e.g., 20px) or to auto, which allows the browser to
+            calculate the margin based on the available space. When using auto,
+            it can center an element horizontally within its container if the
+            left and right margins are set to auto. Additionally, when two
+            vertical margins meet, they can collapse into a single margin that
+            is equal to the larger of the two, which is known as margin
+            collapsing.
+            <br>
+             <div class="margin-standard" style="color: white; background-color: red;">I have 50px margin on all sides.</div><br>
+             <div class="margin-auto" style="color: white; background-color: red;">I am centered horizontally.</div><br>
+            <div class="collapse-one" style="color: white; background-color: red;">Box 1 (Bottom Margin: 50px)</div><br>
+            <div class="collapse-two" style="color: white; background-color: red;">Box 2 (Top Margin: 30px)</div><br>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.margin-standard {
+  margin: 50px;
+}
+
+.margin-auto {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.box1 { margin-bottom: 50px; }
+.box2 { margin-top: 30px; }
+/* The gap between them is 50px, NOT 80px */</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSOutline" class="content-section">
+          <h3>3. CSS Outline</h3>
+          <p>
+            The CSS outline property is used to draw an outline around an element,
+            outside of its border. Unlike borders, outlines do not take up space
+            in the layout and do not affect the size of the element. Outlines are
+            typically used for accessibility purposes, such as indicating focus
+            on interactive elements like buttons or links.
+            <br>
+            <div class="outline-example">
+              I have a black border and a red outline.
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.outline-example {
+  border: 5px solid black;
+  outline: 5px dashed red;
+  outline-offset: 5px;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSBorders" class="content-section">
+          <h3>4. CSS Borders</h3>
+          <p>
+            The CSS border property is used to define the border around an element.
+            It consists of three components: border-width, border-style, and
+            border-color. The border-width specifies the thickness of the border,
+            the border-style defines the pattern (e.g., solid, dashed, dotted),
+            and the border-color sets the color of the border. Borders can be
+            applied to all sides of an element or to specific sides using
+            properties like border-top, border-right, border-bottom, and
+            border-left.
+            <br>
+            <div class="border-style">I have a double red border.</div>
+            <br>
+            <div class="border-radius">I have rounded corners with a radius of 20px.</div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>.border-style {
+  border: 5px double red;
+}
+
+.border-radius {
+  border: 2px solid red;
+  border-radius: 20px;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSPadding" class="content-section">
+          <h3>5. CSS Padding</h3>
+          <p>
+            Padding in CSS is the space between the content of an element and its
+            border. The padding property can be set to a specific value (e.g.,
+            20px) or to different values for each side (padding-top, padding-right,
+            padding-bottom, padding-left). Padding increases the total size of the
+            element, as it adds space inside the border.
+            <br>
+            <div class="padding-example" style="color: white;">I have 50px of padding on all sides.</div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.padding-example {
+  border: 1px solid black;
+  padding: 50px;
+  background-color: red;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSWidthHeight" class="content-section">
+          <h3>6. CSS Width and Height</h3>
+          <p>
+            The width and height properties in CSS are used to set the dimensions of an
+            element. They can be defined using fixed units (e.g., pixels) or relative
+            units (e.g., percentages). When using fixed units, the element will have a
+            specific size regardless of the viewport or container size. When using
+            percentages, the size of the element will be relative to its parent
+            container, allowing for responsive designs that adapt to different screen
+            sizes.
+            <br>
+            <div class="dimension-fixed" style="color: white;">I have a fixed width of 300px and height of 100px.</div><br>
+            <div class="dimension-percent" style="color: white;">I have a width of 50% and height of 50px.</div><br>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.dimension-fixed {
+  width: 300px;
+  height: 100px;
+}
+.dimension-percent {
+  width: 50%;
+  height: 50px;
+}</code></pre>
+          </div>
+          </section>
+
+        <div class="button">
+          <a href="chapter_11.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_13.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

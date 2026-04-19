@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 11 - CSS Cascading</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: kalpurush, sans-serif;
+  background-color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+#te {
+    color: blue !important;
+  }
+#te {
+      color: chartreuse !important;
+}  
+.highlight {
+  color: chartreuse !important;
+}   
+#important {
+  color: green;
+}
+.special {
+  color: green;
+}
+#unique {
+  color: purple;
+}
+
+article {
+  color: green !important;
+}
+.parent {
+  color: blue;
+  font-family: Arial, sans-serif;
+}
+.child {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.grandchild {
+  font-size: inherit;
+  background-color: yellow;
+}
+
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 11</h1>
+          <p style="font-size: 21px; color: white">
+            CSS Cascading
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#1">1. Rule 1: The Last Declaration Will Win</a></li>
+            <li><a href="#2">2. Rule 2: The More Specific Declaration Will Win</a></li>
+            <li><a href="#3">3. Rule 3: Inline Style Is Preferred to both Internal and External Styles</a></li>
+            <li><a href="#4">4. Rule 3: Rule 4: “!important” Declaration Is the Strongest Rule</a></li>
+            <li><a href="#Inheritance">5. Inheritance</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="1" class="content-section">
+          <h3>1. Rule 1: The Last Declaration Will Win</h3>
+          <p>
+            When multiple CSS rules apply to the same element, the last declaration
+            in the stylesheet will take precedence and be applied to the element.
+            This means that if there are conflicting styles, the one that appears
+            later in the CSS code will override the earlier ones. This rule is
+            important to understand when writing CSS, as it allows developers to
+            control which styles are applied to elements by carefully ordering their
+            declarations.
+
+          <div id="firstRule">
+          <p id="te">
+            This paragraph which fistly i applied in blue color but last time i
+            applied in red color. So now this paragraph will be red color
+          </p>
+        </div>
+
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>#te {
+  color: blue !important;
+}
+
+#te {
+  color: red !important;
+}
+
+&lt;p id=&quot;te&quot;&gt;
+  This paragraph which fistly i applied in blue color but last time i
+  applied in red color. So now this paragraph will be red color
+&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+
+          <section id="2" class="content-section">
+          <h3>2. Rule 2: The More Specific Declaration Will Win</h3>
+          <p>
+            When multiple CSS rules apply to the same element, the more specific rule
+            will take precedence over less specific rules. Specificity is a measure
+            of how specific a CSS selector is. For example, an ID selector has higher
+            specificity than a class selector, and a class selector has higher specificity
+            than an element selector. This means that if there are conflicting styles,
+            the one with higher specificity will be applied to the element.
+
+          <div id="secondRule">
+          <p class="highlight">
+            This paragraph will be red because the class selector has higher
+            specificity than the tag selector.
+          </p>
+          <p id="important" class="highlight">
+            This paragraph will be green because the ID selector has higher
+            specificity than the class selector.
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>.highlight {
+  color: red;
+}
+
+&lt;div id=&quot;secondRule&quot;&gt;
+  &lt;p class=&quot;highlight&quot;&gt;
+    This paragraph will be red because the class selector has higher
+    specificity than the tag selector.
+  &lt;/p&gt;
+
+  &lt;p id=&quot;important&quot; class=&quot;highlight&quot;&gt;
+    This paragraph will be green because the ID selector has higher
+    specificity than the class selector.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </section>
+          <section id="3" class="content-section">
+          <h3>3. Rule 3: Inline Style Is Preferred to both Internal and External Styles</h3>
+          <p>
+            When multiple CSS rules apply to the same element, inline styles will take
+            precedence over both internal and external styles. Inline styles are
+            defined directly on an HTML element using the style attribute, while
+            internal styles are defined within a style tag in the head of the
+            document, and external styles are defined in a separate CSS file. This
+            means that if there are conflicting styles, the inline style will be
+            applied to the element, regardless of the order of the internal or
+            external styles.
+
+          <div id="thirdRule">
+           <span style="color: red">
+            This paragraph will be red due to the inline style, even though
+            there are internal styles set.
+          </span>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;span style="color: red"&gt;
+          </div>
+        </section>
+
+       <section id="4" class="content-section">
+          <p>
+          <h3>4. Rule 4: “!important” Declaration Is the Strongest Rule</h3>
+            When multiple CSS rules apply to the same element, the declaration with
+            the "!important" flag will take precedence over all other declarations,
+            regardless of specificity or order. The "!important" flag is used to
+            indicate that a particular style should be applied with the highest
+            priority, and it can be added to any CSS declaration. This means that if
+            there are conflicting styles, the one with the "!important" flag will be
+            applied to the element, even if it is less specific or appears earlier in
+            the stylesheet.
+            <br>
+          <div id="fourthRule">
+          <article class="special" id="unique">
+            This paragraph will be green due to the !important declaration.
+          </article>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;div id=&quot;fourthRule&quot;&gt;
+  &lt;article class=&quot;special&quot; id=&quot;unique&quot;&gt;
+    This paragraph will be green due to the !important declaration.
+  &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </section>
+        <section id="Inheritance" class="content-section">
+          <h3>5. Inheritance</h3>
+          <p>
+            In CSS, inheritance refers to the way certain properties are passed down
+            from parent elements to their child elements in the HTML document tree.
+            When a property is inherited, the child element automatically takes on
+            the same value as its parent element, unless it has its own specific
+            value defined. This allows for a more efficient and consistent styling
+            of web pages, as common styles can be defined on parent elements and
+            automatically applied to their children. <br><br>
+            <div id="inheritance">
+          <h1>Inheritance</h1>
+          <div class="parent">
+            This is the parent element. [This blue color and font-family will be
+            inherited by child elements.]
+            <div class="child">
+              This is the child element. [This font-size 1.2em will be inherited
+              by the grandchild]
+              <div class="grandchild">This is the grandchild element.</div>
+            </div>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+             <pre><code>/* ID selector */
+#important {
+  color: green;
+}
+
+/* Internal stylesheet */
+.special {
+  color: green;
+}
+
+/* More specific internal stylesheet */
+#unique {
+  color: purple;
+}
+
+/* !important declaration */
+article {
+  color: green !important;
+}
+
+.parent {
+  color: blue;
+  font-family: Arial, sans-serif;
+}
+
+.child {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.grandchild {
+  font-size: inherit;
+  background-color: yellow;
+}
+
+&lt;div class=&quot;parent&quot;&gt;
+  This is the parent element. [This blue color and font-family will be
+  inherited by child elements.]
+  &lt;div class=&quot;child&quot;&gt;
+    This is the child element. [This font-size 1.2em will be inherited
+    by the grandchild]
+    &lt;div class=&quot;grandchild&quot;&gt;
+      This is the grandchild element.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+  &lt;article class=&quot;special&quot; id=&quot;unique&quot;&gt;
+    This paragraph will be green due to the !important declaration.
+  &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+        <div class="button">
+          <a href="chapter_10.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_12.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

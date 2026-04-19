@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 05 - Web Forms</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 05</h1>
+          <p style="font-size: 21px; color: white">
+            Web Forms
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#FormElements">1. HTML Form Elements</a></li>
+            <li><a href="#InputTypes">2. HTML Input Type</a></li>
+            <li><a href="#InputAttributes">3. HTML Input Attributes</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+                <section id="FormElements" class="content-section">
+          <h3>1. HTML Form Elements</h3>
+          <p>
+            
+      <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="fullname" placeholder="Enter your name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="password" placeholder="Enter password" required>
+        <br><br>
+        <label for="msg">Message:</label><br>
+        <textarea id="msg" name="message" rows="4" cols="40" placeholder="Write something..."></textarea>
+        <br><br>
+        <label for="city">Select City:</label>
+        <select id="city" name="city">
+          <option value="dhaka">Dhaka</option>
+          <option value="chittagong">Chittagong</option>
+          <option value="sylhet">Sylhet</option>
+        </select>
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <br><br>
+        <label>Skills:</label>
+        <input type="checkbox" name="skill" value="html"> HTML
+        <input type="checkbox" name="skill" value="css"> CSS
+        <input type="checkbox" name="skill" value="js"> JavaScript
+        <br><br>
+        <label for="country">Choose Country:</label>
+        <input list="countries" id="country" name="country">
+        <datalist id="countries">
+          <option value="Bangladesh">
+          <option value="India">
+          <option value="Pakistan">
+          <option value="Nepal">
+        </datalist>
+        <br><br>
+        <fieldset>
+          <legend>Extra Info</legend>
+          <label>Skill Level:</label>
+          <meter value="7" min="0" max="10"></meter>
+          <br><br>
+          <label>Profile Completion:</label>
+          <progress value="60" max="100"></progress>
+          <br><br>
+          <label>Output Example:</label>
+          <output>Result will show here</output>
+        </fieldset>
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+      </form>
+
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;name&quot;&gt;Full Name:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;fullname&quot; placeholder=&quot;Enter your name&quot; required&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Enter your email&quot; required&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label for=&quot;pass&quot;&gt;Password:&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;pass&quot; name=&quot;password&quot; placeholder=&quot;Enter password&quot; required&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label for=&quot;msg&quot;&gt;Message:&lt;/label&gt;&lt;br&gt;
+  &lt;textarea id=&quot;msg&quot; name=&quot;message&quot; rows=&quot;4&quot; cols=&quot;40&quot; placeholder=&quot;Write something...&quot;&gt;&lt;/textarea&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label for=&quot;city&quot;&gt;Select City:&lt;/label&gt;
+  &lt;select id=&quot;city&quot; name=&quot;city&quot;&gt;
+    &lt;option value=&quot;dhaka&quot;&gt;Dhaka&lt;/option&gt;
+    &lt;option value=&quot;chittagong&quot;&gt;Chittagong&lt;/option&gt;
+    &lt;option value=&quot;sylhet&quot;&gt;Sylhet&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Gender:&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt; Male
+  &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt; Female
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Skills:&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;skill&quot; value=&quot;html&quot;&gt; HTML
+  &lt;input type=&quot;checkbox&quot; name=&quot;skill&quot; value=&quot;css&quot;&gt; CSS
+  &lt;input type=&quot;checkbox&quot; name=&quot;skill&quot; value=&quot;js&quot;&gt; JavaScript
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;label for=&quot;country&quot;&gt;Choose Country:&lt;/label&gt;
+  &lt;input list=&quot;countries&quot; id=&quot;country&quot; name=&quot;country&quot;&gt;
+  &lt;datalist id=&quot;countries&quot;&gt;
+    &lt;option value=&quot;Bangladesh&quot;&gt;
+    &lt;option value=&quot;India&quot;&gt;
+    &lt;option value=&quot;Pakistan&quot;&gt;
+    &lt;option value=&quot;Nepal&quot;&gt;
+  &lt;/datalist&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Extra Info&lt;/legend&gt;
+
+    &lt;label&gt;Skill Level:&lt;/label&gt;
+    &lt;meter value=&quot;7&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;&lt;/meter&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label&gt;Profile Completion:&lt;/label&gt;
+    &lt;progress value=&quot;60&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label&gt;Output Example:&lt;/label&gt;
+    &lt;output&gt;Result will show here&lt;/output&gt;
+  &lt;/fieldset&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;button type=&quot;reset&quot;&gt;Reset&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+        </section>
+
+          <section id="#InputTypes" class="content-section">
+          <h3>2. Input Types</h3>
+          <p>
+            HTML5 introduced several new input types that provide better user experience and validation.
+            For example, &lt;input type=&quot;email&quot;&gt; is used for email addresses, &lt;input type=&quot;date&quot;&gt;
+            for date selection, and &lt;input type=&quot;range&quot;&gt; for numeric ranges. These input types
+            are more user-friendly and provide built-in validation capabilities.
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>text, password, email, number, tel, url, search,
+date, datetime-local, month, week, time,
+radio, checkbox,
+file, hidden,
+range, color,
+submit, reset, button, image</code></pre>
+          </div>
+        </section>
+
+          <section id="#InputAttributes" class="content-section">
+          <h3>3. Input Attributes</h3>
+          <p>
+            <form>
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            value="Sheikh Ahasunul Islam"
+            required
+            readonly
+            minlength="5"
+            maxlength="15"
+            size="20"
+            autocomplete="on"
+          >
+        </form>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;form&gt;
+  &lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
+  &lt;input
+    type=&quot;text&quot;
+    id=&quot;username&quot;
+    name=&quot;username&quot;
+    placeholder=&quot;Enter your username&quot;
+    value=&quot;Sheikh Ahasunul Islam&quot;
+    required
+    readonly
+    minlength=&quot;5&quot;
+    maxlength=&quot;15&quot;
+    size=&quot;20&quot;
+    autocomplete=&quot;on&quot;
+  &gt;
+&lt;/form&gt;</code></pre>
+          </div>
+        </section>
+
+
+        <div class="button">
+          <a href="chapter_04.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_06.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

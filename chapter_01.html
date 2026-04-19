@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 01 - Getting to Know HTML</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 01</h1>
+        <p style="font-size: 21px; color: white"> Getting to Know HTML </p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#First-Webpage">1. First Webpage</a></li>
+            <li><a href="#Character-Encoding">2. Character Encoding</a></li>
+            <li><a href="#Element-Attributes">3. Element Attributes</a></li>
+            <li><a href="#Favorite-Icon">4. Favorite Icon</a></li>
+            <li><a href="#Comments">5. Comments</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="First-Webpage" class="content-section">
+          <h3>1. First Webpage</h3>
+          <p>
+            Welcome to my Webpage.
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;p&gt;
+  Welcome to my Webpage.
+&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="Character-Encoding" class="content-section">
+          <h3>2. Character Encoding</h3>
+          <p>
+            Meta: UTF-8
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;</code></pre>
+        </section>
+
+          <section id="Element-Attributes" class="content-section">
+          <h3>3. Element Attributes</h3>
+          <p>
+            Attributes provide additional information about an element. They are always included in the opening tag and usually come in name/value pairs like name="value".
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;img src=&quot;image.jpg&quot; alt=&quot;Description of image&quot; /&gt;</code></pre>
+        </section>
+
+          <section id="Favorite-Icon" class="content-section">
+          <h3>4. Favorite Icon</h3>
+          <p>
+            The favorite icon (favicon) is a small image displayed in the browser tab.
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;/favicon.ico&quot; /&gt;</code></pre>
+        </section>
+
+          <section id="Comments" class="content-section">
+          <h3>5. Comments</h3>
+          <p>
+            Comments are used to explain code and are not displayed in the browser.
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;!-- This is a comment --&gt;</code></pre>
+        </section>
+
+        <div class="button">
+          <a href="ChapterHomePage.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_02.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+      <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

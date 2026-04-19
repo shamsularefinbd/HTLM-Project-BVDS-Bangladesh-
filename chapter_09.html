@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 09 - Getting to Know CSS</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      .em {
+        font-size: 30px;
+      }
+      .custom {
+        font-size: 2em;
+      }
+      .parents {
+        font-size: 30px;
+      }
+      .child {
+        font-size: 2rem;
+      }
+      .notshorthand {
+        font-size: 20px;
+        width: 80%;
+        border-color:chartreuse;
+        border-style:groove;
+        border-top-width: 5px;
+        border-right-width: 10px;
+        border-bottom-width: 15px;
+        border-left-width: 20px;
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-bottom: 10px;
+        margin-right: 40px;
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+      }
+      .shorthand {
+        font-size: 20px;
+        width: 80%;
+        border-color: chartreuse;
+        border-style: groove;
+        border-width: 5px 20px 15px 10px;
+        margin: 40px 40px 10px 40px;
+        padding: 15px 10px 20px 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 09</h1>
+          <p style="font-size: 21px; color: white">
+            Getting to Know CSS
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#cssunits">1. CSS Units</a></li>
+            <li><a href="#shorthand">2. Shorthand Properties</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+
+        <section id="cssunits" class="content-section">
+          <h3>1. CSS Units</h3>
+          <p>
+            CSS units are used to specify lengths, sizes, and other measurements in CSS. They can be broadly categorized into absolute and relative units.
+            <br>
+
+          <div id="cssUnits">
+          <h1>CSS Units</h1>
+          <div class="reletiveLength">
+            <h1>Reletive Length</h1>
+            <hr />
+            <div class="em">
+              <h1>em</h1>
+              <h2>Usling font-size=30px current element</h2>
+              <p>
+                This is a paragraph which location is parent(div). Font size of
+                this paragraph in 30px
+              </p>
+              <h2>Using font-size=2em</h2>
+              <p class="custom">
+                This is a paragraph which location is also in parent(div). Font
+                size of this paragraph in 2em but actual font size of this
+                paragrph (30*2=60px) because em means two times of the sixe of
+                the current element's font
+              </p>
+            </div>
+            <div class="rem">
+              <h1>Rem</h1>
+              <h2>Usling font-size=30px in parents</h2>
+              <div class="parents">
+                This is a paragraph which location is parent. Font size of this
+                paragraph in 30px
+                <div class="child">
+                  <h2>Using font-size=2rem in child</h2>
+                  <p class="child">
+                    This is a paragraph which location is child. Font size of
+                    this paragraph in 2em but actual font size of this paragrph
+                    (30*2=60px) because em means two times of the sixe of the
+                    current element's font
+                  </p>
+                </div>
+              </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>.em {
+  font-size: 30px;
+}
+.custom {
+  font-size: 2em;
+}
+.parents {
+  font-size: 30px;
+}
+.child {
+  font-size: 2rem;
+}
+
+&lt;div id=&quot;cssUnits&quot;&gt;
+  &lt;h1&gt;CSS Units&lt;/h1&gt;
+
+  &lt;div class=&quot;reletiveLength&quot;&gt;
+    &lt;h1&gt;Reletive Length&lt;/h1&gt;
+    &lt;hr /&gt;
+
+    &lt;div class=&quot;em&quot;&gt;
+      &lt;h1&gt;em&lt;/h1&gt;
+      &lt;h2&gt;Usling font-size=30px current element&lt;/h2&gt;
+      &lt;p&gt;
+        This is a paragraph which location is parent(div). Font size of
+        this paragraph in 30px
+      &lt;/p&gt;
+
+      &lt;h2&gt;Using font-size=2em&lt;/h2&gt;
+      &lt;p class=&quot;custom&quot;&gt;
+        This is a paragraph which location is also in parent(div). Font
+        size of this paragraph in 2em but actual font size of this
+        paragrph (30*2=60px) because em means two times of the sixe of
+        the current element&#39;s font
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;rem&quot;&gt;
+      &lt;h1&gt;Rem&lt;/h1&gt;
+      &lt;h2&gt;Usling font-size=30px in parents&lt;/h2&gt;
+
+      &lt;div class=&quot;parents&quot;&gt;
+        This is a paragraph which location is parent. Font size of this
+        paragraph in 30px
+
+        &lt;div class=&quot;child&quot;&gt;
+          &lt;h2&gt;Using font-size=2rem in child&lt;/h2&gt;
+          &lt;p class=&quot;child&quot;&gt;
+            This is a paragraph which location is child. Font size of
+            this paragraph in 2em but actual font size of this paragrph
+            (30*2=60px) because em means two times of the sixe of the
+            current element&#39;s font
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+          </div>
+        </section>
+        <section id="shorthand" class="content-section">
+          <h3>2. Shorthand Properties</h3>
+          <p>
+            Shorthand properties in CSS allow you to set multiple related properties in a single declaration. This can make your CSS more concise and easier to read. Some common shorthand properties include:
+            <br>
+            <br>
+            &bull; <strong>Margin:</strong> The margin property can set the margin for all four sides of an element (top, right, bottom, left) in one declaration. For example: margin: 10px 20px 15px 5px; sets the top margin to 10px, right margin to 20px, bottom margin to 15px, and left margin to 5px.
+            <br>
+            &bull; <strong>Padding:</strong> Similar to margin, the padding property can set the padding for all four sides of an element in one declaration. For example: padding: 10px 20px; sets the top and bottom padding to 10px and the left and right padding to 20px.
+            <br>
+            &bull; <strong>Border:</strong> The border property can set the width, style, and color of an element's border in one declaration. For example: border: 2px solid red; sets a solid red border with a width of 2 pixels.
+            <br><br>
+            <div id="shorthandElement">
+          <h1>Shorthand Properties</h1>
+          <hr />
+          <h2>Using properties</h2>
+          <div class="notshorthand">
+            <h2>Using properties</h2>
+            <pre>
+                  font-size: 20px;
+                  width: 80%;
+                  border-color: rgb(166, 255, 0);
+                  border-style: solid;
+                  border-top-width: 5px;
+                  border-right-width: 10px;
+                  border-bottom-width: 15px;
+                  border-left-width: 20px;
+                  margin-top: 40px;
+                  margin-left: 40px;
+                  margin-bottom: 10px;
+                  margin-right: 40px;
+                  padding-left: 10px;
+                  padding-right: 20px;
+                  padding-top: 15px;
+                  padding-bottom: 20px;
+            </pre>
+          </div>
+          <div class="shorthand">
+            <h2>Using properties with Shorthand</h2>
+            <pre>
+                font-size: 20px;
+                width: 80%;
+                border-color: rgb(166, 255, 0);
+                border-style: solid;
+                border-width: 5px 20px 15px 10px;
+                margin: 40px 40px 10px 40px;
+                padding: 15px 10px 20px 20px;
+            </pre>
+          </div>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>.notshorthand {
+  font-size: 20px;
+  width: 80%;
+  border-color: red;
+  border-style: groove;
+  border-top-width: 5px;
+  border-right-width: 10px;
+  border-bottom-width: 15px;
+  border-left-width: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.shorthand {
+  font-size: 20px;
+  width: 80%;
+  border-color: red;
+  border-style: groove;
+  border-width: 5px 20px 15px 10px;
+  margin: 40px 40px 10px 40px;
+  padding: 15px 10px 20px 20px;
+}
+
+&lt;div id=&quot;shorthandElement&quot;&gt;
+  &lt;h1&gt;Shorthand Properties&lt;/h1&gt;
+  &lt;hr /&gt;
+
+  &lt;h2&gt;Using properties&lt;/h2&gt;
+  &lt;div class=&quot;notshorthand&quot;&gt;
+    &lt;h2&gt;Using properties&lt;/h2&gt;
+    &lt;pre&gt;
+font-size: 20px;
+width: 80%;
+border-color: rgb(166, 255, 0);
+border-style: solid;
+border-top-width: 5px;
+border-right-width: 10px;
+border-bottom-width: 15px;
+border-left-width: 20px;
+margin-top: 40px;
+margin-left: 40px;
+margin-bottom: 10px;
+margin-right: 40px;
+padding-left: 10px;
+padding-right: 20px;
+padding-top: 15px;
+padding-bottom: 20px;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;shorthand&quot;&gt;
+    &lt;h2&gt;Using properties with Shorthand&lt;/h2&gt;
+    &lt;pre&gt;
+font-size: 20px;
+width: 80%;
+border-color: rgb(166, 255, 0);
+border-style: solid;
+border-width: 5px 20px 15px 10px;
+margin: 40px 40px 10px 40px;
+padding: 15px 10px 20px 20px;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </section>
+
+        <div class="button">
+          <a href="chapter_08.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_10.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

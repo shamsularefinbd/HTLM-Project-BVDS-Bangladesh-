@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 08 - HTML Advanced</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 08</h1>
+          <p style="font-size: 21px; color: white">
+            HTML Advanced
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#url">1. Data URLs</a></li>
+            <li><a href="#block">2. Block Elements</a></li>
+            <li><a href="#inline">3. Inline Elements</a></li>
+            <li><a href="#inlineblock">4. Inline-Block Elements</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+
+        <section id="url" class="content-section">
+          <h3>1. Data URLs</h3>
+          <p>
+            Data URLs allow you to embed small files directly within your HTML or CSS code. This can be useful for including images, fonts, or other resources without needing separate files. A data URL consists of a prefix (data:), followed by the MIME type of the data, and then the actual data encoded in base64.
+            <br><br>red dot image using a data URL: <br>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==&quot; alt=&quot;Red dot&quot; /&gt;</code></pre>
+          </div>
+        </section>
+
+          <section id="block" class="content-section">
+          <h3>2. Block Elements</h3>
+          <p>
+            Block elements are HTML elements that take up the full width available and start on a new line. Common block elements include &lt;div&gt;, &lt;p&gt;, &lt;h1&gt; to &lt;h6&gt;, &lt;ul&gt;, &lt;ol&gt;, and &lt;li&gt;. They are typically used to structure the content of a webpage.
+            <br>
+            <div id="blockElements" style="display: block;">
+          <h1>Block Elements</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quam
+            pariatur aspernatur libero delectus, aliquam perferendis nostrum
+            necessitatibus quibusdam deleniti quasi veritatis iste vitae
+            deserunt, officia quaerat accusantium corporis est vel, similique
+            officiis saepe quas dolores non. Facere dicta quibusdam doloremque!
+            Odit, numquam sit cum accusantium ipsa aliquam nemo quibusdam?
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre>&lt;div id=&quot;blockElements&quot; style=&quot;display: block;&quot;&gt;
+  &lt;h1&gt;Block Elements&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quam
+    pariatur aspernatur libero delectus, aliquam perferendis nostrum
+    necessitatibus quibusdam deleniti quasi veritatis iste vitae
+    deserunt, officia quaerat accusantium corporis est vel, similique
+    officiis saepe quas dolores non. Facere dicta quibusdam doloremque!
+    Odit, numquam sit cum accusantium ipsa aliquam nemo quibusdam?
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </section>
+
+        <section id="inline" class="content-section">
+          <h3>3. Inline Elements</h3>
+          <p>
+            Inline elements are HTML elements that do not start on a new line and only take up as much width as necessary. Common inline elements include &lt;span&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;, and &lt;img&gt;. They are typically used to style or link small portions of text within block elements.
+            <br>
+            This is an <strong>inline element</strong> example using the &lt;strong&gt; tag to emphasize text.
+            <br>
+          <div id="inlineElements" style="display: inline;">
+          <h1>Inline Elements</h1><br><br>
+          <img src="Image/cup.jpg" width="800" alt="Coffee" />
+        </div>
+        
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;div id=&quot;inlineElements&quot; style=&quot;display: inline;&quot;&gt;
+  &lt;h1&gt;Inline Elements&lt;/h1&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src=&quot;Image/cup.jpg&quot; width=&quot;800&quot; alt=&quot;Coffee&quot; /&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </section>
+
+          <section id="inlineblock" class="content-section">
+          <h3>4. Inline Block Elements</h3>
+          <p>
+            Inline-block elements are a hybrid between block and inline elements. They flow with the text like inline elements but can have width and height set like block elements. Common inline-block elements include &lt;img&gt; and &lt;button&gt;. They are useful for creating layouts where elements need to be aligned horizontally but still maintain block-like properties.
+            <br>
+            Here are some headings styled as inline-block elements:
+            <br>
+            <h1 style="display: inline-block; margin-right: 10px;">My First h1</h1>
+            <h2 style="display: inline-block; margin-right: 10px;">My Second h2</h2>
+            <h4 style="display: inline-block; margin-right: 10px;">My Fourth h4</h4>
+            <h5 style="display: inline-block; margin-right: 10px;">My Fifth h5</h5>
+            <h6 style="display: inline-block; margin-right: 10px;">My Sixth h6</h6>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;h1 style=&quot;display: inline-block; margin-right: 10px;&quot;&gt;My First h1&lt;/h1&gt;
+&lt;h2 style=&quot;display: inline-block; margin-right: 10px;&quot;&gt;My Second h2&lt;/h2&gt;
+&lt;h4 style=&quot;display: inline-block; margin-right: 10px;&quot;&gt;My Fourth h4&lt;/h4&gt;
+&lt;h5 style=&quot;display: inline-block; margin-right: 10px;&quot;&gt;My Fifth h5&lt;/h5&gt;
+&lt;h6 style=&quot;display: inline-block; margin-right: 10px;&quot;&gt;My Sixth h6&lt;/h6&gt;</code></pre>
+          </div>
+        </section>
+
+        <div class="button">
+          <a href="chapter_07.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_09.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

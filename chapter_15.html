@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 15 - CSS Backgrounds</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .bg-color {
+        background-color: chartreuse;
+        color: white;
+      }
+
+      .bg-image {
+        background-image: url("Image/smile.png");
+        height: 100px;
+      }
+
+      .repeat-x {
+        background-image: url("Image/smile.png");
+        background-repeat: repeat-x;
+        height: 100px;
+        width: 100px;
+      }
+
+      .repeat-y {
+        background-image: url("Image/smile.png");
+        background-repeat: repeat-y;
+        height: 100px;
+      }
+
+      .no-repeat {
+        background-image: url("Image/smile.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        width: 100px;
+      }
+
+      .bg-pos {
+        background-image: url("Image/smile.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px dashed chartreuse;
+        height: 150px;
+      }
+
+      .bg-cover {
+        background-image: url("Image/smile.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        height: 150px;
+      }
+
+      .bg-contain {
+        background-image: url("Image/smile.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 1px dashed chartreuse;
+        height: 80px;
+      }
+
+      .clip-border {
+        background-color: chartreuse;
+        border: 10px dashed wheat;
+        padding: 20px;
+        background-clip: border-box;
+      }
+
+      .clip-padding {
+        background-color: wheat;
+        border: 10px dashed chartreuse;
+        padding: 20px;
+        background-clip: padding-box;
+      }
+
+      .clip-content {
+        background-color: wheat;
+        border: 10px dashed chartreuse;
+        padding: 20px;
+        background-clip: content-box;
+      }
+
+      .attach-scroll {
+        height: 150px;
+        overflow: scroll;
+        background-image: url("Image/smile.png");
+        background-attachment: scroll;
+      }
+
+      .attach-local {
+        height: 150px;
+        overflow: scroll;
+        background-image: url("Image/smile.png");
+        background-attachment: local;
+      }
+
+      .linear-down {
+        background-image: linear-gradient(chartreuse, yellow);
+        color: white;
+        height: 100px;
+      }
+
+      .linear-right {
+        background-image: linear-gradient(to right, chartreuse, yellow);
+        color: white;
+        height: 100px;
+      }
+
+      .linear-diag {
+        background-image: linear-gradient(to bottom right,chartreuse, yellow);
+        color: white;
+        height: 100px;
+      }
+
+      .radial {
+        background-image: radial-gradient(circle, chartreuse, yellow, green);
+        height: 100px;
+      }
+
+      .repeat-linear {
+        background-image: repeating-linear-gradient(
+          45deg,
+          chartreuse,
+          chartreuse 10px,
+          white 10px,
+          white 20px
+        );
+        color: black;
+        font-size: larger;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 15</h1>
+        <p style="font-size: 21px; color: white">CSS Backgrounds</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li>
+              <a href="#BackgroundProperties">1. CSS Backgrounds Properties</a>
+            </li>
+            <li>
+              <a href="#GradientBackgrounds">2. CSS Gradient Backgrounds</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+      <main class="content">
+        <section id="BackgroundProperties" class="content-section">
+          <h3>1. CSS Backgrounds Properties</h3>
+          <p>
+            CSS provides several properties to control the background of an
+            element. The &lt;background-color&gt; property allows you to set a
+            solid color as the background, while the &lt;background-image&gt;
+            property lets you use an image as the background. You can also
+            control how the background image is displayed using properties like
+            &lt;background-repeat&gt;, &lt;background-position&gt;, and
+            &lt;background-size&gt;. These properties give you flexibility in
+            designing the look and feel of your webpage.
+            <br />
+            <h4>Background Color</h4>
+            <div class="example bg-color">
+              I have a solid tomato background.
+            </div>
+            <br>
+            <h4>Background Repeat</h4>
+            <div class="example repeat-x">Repeat Horizontal (X)</div><br>
+            <div class="example repeat-y">Repeat Vertical (Y)</div><br>
+            <div class="example no-repeat">No Repeat</div><br>
+            <br>
+            <h4>Background Position</h4>
+            <div class="example bg-pos">
+              The image is positioned in the center.
+            </div>
+            <br>
+            <h4>Background Size</h4>
+            <div class="example bg-cover">Size: Cover</div><hr>
+            <div class="example bg-contain">Size: Contain</div><hr>
+            <br>
+            <h4>Background Clip</h4>
+            <p>Controls how far the background extends.</p><br>
+            <div class="example clip-border">Border Box</div><br>
+            <div class="example clip-padding">Padding Box</div><br>
+            <div class="example clip-content">Content Box</div><br>
+            <br>
+            <h4>Background Attachment</h4>
+            <p>Controls if the background scrolls with the page or the element.</p>
+            <br>
+            <div class="example attach-scroll">
+              <p>Scroll (Default):<br>Scroll me!<br>The background<br>stays put<br>relative to border.</p>
+              <br><br><br>
+            </div>
+            <br>
+            <div class="example attach-local">
+              <p>Local:<br>Scroll me!<br>The background<br>moves with<br>the text.</p>
+              <br><br><br>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>      .bg-color {
+        background-color: red;
+        color: white;
+      }
+
+      .bg-image {
+        background-image: url("Image/smile.png");
+      }
+
+      .repeat-x {
+        background-image: url("Image/smile.png");
+        background-repeat: repeat-x;
+      }
+
+      .repeat-y {
+        background-image: url("Image/smile.png");
+        background-repeat: repeat-y;
+      }
+
+      .no-repeat {
+        background-image: url("Image/smile.png");
+        background-repeat: no-repeat;
+      }
+
+      .bg-pos {
+        background-image: url("Image/smile.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px dashed red;
+      }
+
+      .bg-cover {
+        background-image: url("Image/smile.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+      }
+
+      .bg-contain {
+        background-image: url("Image/smile.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 1px dashed red;
+      }
+
+      .clip-border {
+        background-color: red;
+        border: 10px dashed wheat;
+        padding: 20px;
+        background-clip: border-box;
+      }
+
+      .clip-padding {
+        background-color: wheat;
+        border: 10px dashed red;
+        padding: 20px;
+        background-clip: padding-box;
+      }
+
+      .clip-content {
+        background-color: wheat;
+        border: 10px dashed red;
+        padding: 20px;
+        background-clip: content-box;
+      }
+
+      .attach-scroll {
+        height: 150px;
+        overflow: scroll;
+        background-image: url("Image/smile.png");
+        background-attachment: scroll;
+      }
+
+      .attach-local {
+        height: 150px;
+        overflow: scroll;
+        background-image: url("Image/smile.png");
+        background-attachment: local;
+      }</code></pre>
+          </div>
+
+        </section>
+
+        <section id="GradientBackgrounds" class="content-section">
+          <h3>2. CSS Gradient Backgrounds</h3>
+          <p>
+            CSS gradients allow you to create smooth transitions between two or more colors. There are two main types of gradients: linear and radial. A linear gradient transitions colors along a straight line, while a radial gradient transitions colors outward from a central point. You can customize the direction, shape, and color stops of gradients to create visually appealing backgrounds for your web pages.
+            <br>
+            <h4>Linear Gradients</h4>
+            <div class="example linear-down">Linear Gradient (Down)</div><hr>
+            <div class="example linear-right">Linear Gradient (Right)</div><hr>
+            <div class="example linear-diag">Linear Gradient (Diagonal)</div><hr>
+            <br>
+            <h4>Radial Gradients</h4>
+            <div class="example radial">Radial Gradient</div><hr>
+            <br>
+            <h4>Repeating Gradients</h4>
+            <div class="example repeat-linear">Repeating Linear Gradient</div><hr>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>      .linear-down {
+        background-image: linear-gradient(red, yellow);
+        color: white;
+        height: 100px;
+      }
+
+      .linear-right {
+        background-image: linear-gradient(to right, red, yellow);
+        color: white;
+        height: 100px;
+      }
+
+      .linear-diag {
+        background-image: linear-gradient(to bottom right, red, yellow);
+        color: white;
+        height: 100px;
+      }
+
+      .radial {
+        background-image: radial-gradient(circle, red, yellow, green);
+        height: 100px;
+      }
+
+      .repeat-linear {
+        background-image: repeating-linear-gradient(
+          45deg,
+          red,
+          red 10px,
+          white 10px,
+          white 20px
+        );
+        color: black;
+        font-size: larger;
+        height: 100px;
+      }</code></pre>
+        </section>
+
+        <div class="button">
+          <a href="chapter_14.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_16.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

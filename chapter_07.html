@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 07 - HTML Graphics</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 07</h1>
+          <p style="font-size: 21px; color: white">
+            HTML Graphics
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#svg">1. SVG Graphics</a></li>
+            <li><a href="#canvas">2. Canvas</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+
+        <section id="svg" class="content-section">
+          <h3>1. SVG Graphics</h3>
+          <p>
+        <div id="SVGGraphics">
+          <h1>SVG Ractangle and Circle</h1>
+          <h2>Flag of Bangladesh</h2><br>
+          <svg width="300" height="300">
+            <rect x="40" y="10" width="200" height="120" fill="green" />
+            <circle cx="130" cy="70" r="40" fill="red" />
+            <line
+              x1="40"
+              y1="10"
+              x2="40"
+              y2="230"
+              stroke="red"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+            <text x="80" y="160">Flag of Bangladesh</text>
+          </svg>
+
+          <h1>SVG Ellipse</h1><br><br>
+          <svg height="150" width="300">
+            <ellipse cx="150" cy="80" rx="100" ry="60" fill="red" />
+            <text x="120" y="80" fill="white">Ellipse</text>
+          </svg>
+
+          <h2>SVG Line</h2><br><br>
+          <svg width="300" height="300">
+            <line
+              x1="0"
+              y1="0"
+              x2="100"
+              y2="100"
+              stroke="red"
+              stroke-width="2"
+            />
+            <line
+              x1="300"
+              y1="0"
+              x2="200"
+              y2="100"
+              stroke="red"
+              stroke-width="2"
+            />
+            <line
+              x1="300"
+              y1="300"
+              x2="200"
+              y2="200"
+              stroke="red"
+              stroke-width="2"
+            />
+            <line
+              x1="0"
+              y1="300"
+              x2="100"
+              y2="200"
+              stroke="red"
+              stroke-width="2"
+            />
+          </svg>
+          <h2>Polyline</h2><br><br>
+          <svg width="200" height="200">
+            <polyline
+              points="60,60 150,30 30,150 120,120"
+              stroke="red"
+              stroke-width="2"
+              fill="white"
+            />
+            <text x="60" y="180">Polyline</text>
+          </svg>
+
+          <h2>Polygon</h2>
+          <svg width="200" height="200">
+            <polygon
+              points="60,60 150,30 30,150 120,120"
+              stroke="red"
+              stroke-width="2"
+              fill="white"
+            />
+            <text x="60" y="180">Ploygon</text>
+          </svg>
+          <h2>SVG Path</h2><br><br>
+          <svg height="100" width="100">
+            <path
+              d="M50 0 L25 80 l50 0 Z"
+              fill="none"
+              stroke="red"
+              stroke-width="2"
+            />
+            <text x="20" y="95">SVG Path</text>
+          </svg>
+          <br />
+          <svg width="200" height="200" viewBox="0 0 100 100">
+            <path
+              d="M10 80 C40 10, 60 10, 90 80"
+              stroke="red"
+              fill="transparent"
+              stroke-width="2"
+            />
+          </svg>
+          <h2>SVG Text</h2><br><br>
+          <br />
+          <svg width="400" height="200">
+            <text x="50" y="50" font-size="24" fill="blue">Ahasunul Islam Islam</text>
+            <text
+              x="50"
+              y="100"
+              font-size="30"
+              fill="red"
+              font-family="Arial"
+              font-weight="bold"
+            >
+              Ahasunul Islam Islam
+            </text>
+            <text
+              x="50"
+              y="150"
+              font-size="20"
+              fill="white"
+              transform="rotate(20,50,150)"
+            >
+              Rotated Text (20°)
+            </text>
+          </svg>
+          <h2>SVH Link</h2>
+          <svg height="100" width="200">
+              <a href="https://www.prothomalo.com/" target="_blank">
+                <text x="0" y="50" fill="red">Prothom Alo</text>
+          </svg>
+          <h2>SVG Stroke</h2>
+          <br />
+          <svg width="100" height="100">
+            <line
+              x1="20"
+              y1="20"
+              x2="200"
+              y2="50"
+              stroke="red"
+              stroke-width="3"
+            />
+          </svg>
+          <svg width="300" height="100">
+            <line
+              x1="0"
+              y1="20"
+              x2="300"
+              y2="10"
+              stroke="red"
+              stroke-width="2"
+              stroke-dasharray="10,5,20"
+            />
+          </svg>
+          <h2>SVG Gradients</h2>
+          <h4>Linear Horizontal Gradient</h4><br><br>
+
+          <svg height="100" width="200">
+            <defs>
+              <linearGradient id="lg1" x1="0%" y1="0%" x2="50%" y2="0%">
+                <stop offset="0%" stop-color="blue" />
+                <stop offset="40%" stop-color="purple" />
+                <stop offset="80%" stop-color="yellow" />
+                <stop offset="100%" stop-color="red" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="200" height="100" fill="url(#lg1)" />
+          </svg>
+          <br />
+          <h4>Linear Vertical Gradient</h4><br><br>
+          <svg height="100" width="200">
+            <defs>
+              <linearGradient id="lg2" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="blue" />
+                <stop offset="40%" stop-color="purple" />
+                <stop offset="80%" stop-color="yellow" />
+                <stop offset="100%" stop-color="red" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="300" height="100" fill="url(#lg2)" />
+          </svg>
+          <h2>Radial Gradient</h2><br><br>
+          <svg width="200" height="100">
+            <defs>
+              <radialGradient
+                id="rg1"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="30%"
+                fy="30%"
+              >
+                <stop offset="0%" stop-color="violet" />
+                <stop offset="15%" stop-color="blue" />
+                <stop offset="30%" stop-color="indigo" />
+                <stop offset="45%" stop-color="white" />
+                <stop offset="60%" stop-color="yellow" />
+                <stop offset="75%" stop-color="orange" />
+                <stop offset="100%" stop-color="red" />
+              </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="300" height="100" fill="url(#rg1)" />
+          </svg>
+          <h4>SVG FFilters</h4><br><br>
+          <svg width="300" height="150">
+            <defs>
+              <filter id="blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+              </filter>
+
+              <filter id="dropshadow">
+                <feDropShadow
+                  dx="4"
+                  dy="4"
+                  stdDeviation="10"
+                  flood-color="black"
+                />
+              </filter>
+            </defs>
+            <circle cx="70" cy="70" r="50" fill="blue" filter="url(#blur)" />
+            <rect
+              x="180"
+              y="20"
+              width="100"
+              height="100"
+              fill="white"
+              filter="url(#dropshadow)"
+            />
+          </svg>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;div id=&quot;SVGGraphics&quot;&gt;
+  &lt;h1&gt;SVG Ractangle and Circle&lt;/h1&gt;
+  &lt;h2&gt;Flag of Bangladesh&lt;/h2&gt;&lt;br&gt;
+
+  &lt;svg width=&quot;300&quot; height=&quot;300&quot;&gt;
+    &lt;rect x=&quot;40&quot; y=&quot;10&quot; width=&quot;200&quot; height=&quot;120&quot; fill=&quot;green&quot; /&gt;
+    &lt;circle cx=&quot;130&quot; cy=&quot;70&quot; r=&quot;40&quot; fill=&quot;red&quot; /&gt;
+    &lt;line
+      x1=&quot;40&quot;
+      y1=&quot;10&quot;
+      x2=&quot;40&quot;
+      y2=&quot;230&quot;
+      stroke=&quot;red&quot;
+      stroke-width=&quot;10&quot;
+      stroke-linecap=&quot;round&quot;
+    /&gt;
+    &lt;text x=&quot;80&quot; y=&quot;160&quot;&gt;Flag of Bangladesh&lt;/text&gt;
+  &lt;/svg&gt;
+
+  &lt;h1&gt;SVG Ellipse&lt;/h1&gt;&lt;br&gt;&lt;br&gt;
+  &lt;svg height=&quot;150&quot; width=&quot;300&quot;&gt;
+    &lt;ellipse cx=&quot;150&quot; cy=&quot;80&quot; rx=&quot;100&quot; ry=&quot;60&quot; fill=&quot;red&quot; /&gt;
+    &lt;text x=&quot;120&quot; y=&quot;80&quot; fill=&quot;white&quot;&gt;Ellipse&lt;/text&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;SVG Line&lt;/h2&gt;&lt;br&gt;&lt;br&gt;
+  &lt;svg width=&quot;300&quot; height=&quot;300&quot;&gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;100&quot; y2=&quot;100&quot; 
+stroke=&quot;red&quot; stroke-width=&quot;2&quot; /&gt;
+    &lt;line x1=&quot;300&quot; y1=&quot;0&quot; x2=&quot;200&quot; y2=&quot;100&quot;
+ stroke=&quot;red&quot; stroke-width=&quot;2&quot; /&gt;
+    &lt;line x1=&quot;300&quot; y1=&quot;300&quot; x2=&quot;200&quot; y2=&quot;200&quot;
+ stroke=&quot;red&quot; stroke-width=&quot;2&quot; /&gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;300&quot; x2=&quot;100&quot; y2=&quot;200&quot; 
+stroke=&quot;red&quot; stroke-width=&quot;2&quot; /&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;Polyline&lt;/h2&gt;&lt;br&gt;&lt;br&gt;
+  &lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;
+    &lt;polyline
+      points=&quot;60,60 150,30 30,150 120,120&quot;
+      stroke=&quot;red&quot;
+      stroke-width=&quot;2&quot;
+      fill=&quot;white&quot;
+    /&gt;
+    &lt;text x=&quot;60&quot; y=&quot;180&quot;&gt;Polyline&lt;/text&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;Polygon&lt;/h2&gt;
+  &lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;
+    &lt;polygon
+      points=&quot;60,60 150,30 30,150 120,120&quot;
+      stroke=&quot;red&quot;
+      stroke-width=&quot;2&quot;
+      fill=&quot;white&quot;
+    /&gt;
+    &lt;text x=&quot;60&quot; y=&quot;180&quot;&gt;Ploygon&lt;/text&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;SVG Path&lt;/h2&gt;&lt;br&gt;&lt;br&gt;
+  &lt;svg height=&quot;100&quot; width=&quot;100&quot;&gt;
+    &lt;path d=&quot;M50 0 L25 80 l50 0 Z&quot; fill=&quot;none&quot; stroke=&quot;
+red&quot; stroke-width=&quot;2&quot; /&gt;
+    &lt;text x=&quot;20&quot; y=&quot;95&quot;&gt;SVG Path&lt;/text&gt;
+  &lt;/svg&gt;
+
+  &lt;br /&gt;
+  &lt;svg width=&quot;200&quot; height=&quot;200&quot; viewBox=&quot;0 0 100 100&quot;&gt;
+    &lt;path d=&quot;M10 80 C40 10, 60 10, 90 80&quot; stroke=&quot;red&quot; fill=&quot;
+transparent&quot; stroke-width=&quot;2&quot; /&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;SVG Text&lt;/h2&gt;&lt;br&gt;&lt;br&gt;
+  &lt;svg width=&quot;400&quot; height=&quot;200&quot;&gt;
+    &lt;text x=&quot;50&quot; y=&quot;50&quot; font-size=&quot;24&quot; fill=&quot;blue
+&quot;&gt;Ahasunul Islam Islam&lt;/text&gt;
+    &lt;text x=&quot;50&quot; y=&quot;100&quot; font-size=&quot;30&quot; fill=&quot;red
+&quot; font-family=&quot;Arial&quot; font-weight=&quot;bold&quot;&gt;
+      Ahasunul Islam Islam
+    &lt;/text&gt;
+    &lt;text x=&quot;50&quot; y=&quot;150&quot; font-size=&quot;20&quot; fill=&quot;white
+&quot; transform=&quot;rotate(20,50,150)&quot;&gt;
+      Rotated Text (20°)
+    &lt;/text&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;SVH Link&lt;/h2&gt;
+  &lt;svg height=&quot;100&quot; width=&quot;200&quot;&gt;
+    &lt;a href=&quot;https://www.prothomalo.com/&quot; target=&quot;_blank&quot;&gt;
+      &lt;text x=&quot;0&quot; y=&quot;50&quot; fill=&quot;red&quot;&gt;Prothom Alo&lt;/text&gt;
+    &lt;/a&gt;
+  &lt;/svg&gt;
+
+  &lt;h2&gt;SVG Stroke&lt;/h2&gt;&lt;br /&gt;
+  &lt;svg width=&quot;100&quot; height=&quot;100&quot;&gt;
+    &lt;line x1=&quot;20&quot; y1=&quot;20&quot; x2=&quot;200&quot; y2=&quot;50&quot; 
+stroke=&quot;red&quot; stroke-width=&quot;3&quot; /&gt;
+  &lt;/svg&gt;
+
+  &lt;svg width=&quot;300&quot; height=&quot;100&quot;&gt;
+    &lt;line
+      x1=&quot;0&quot;
+      y1=&quot;20&quot;
+      x2=&quot;300&quot;
+      y2=&quot;10&quot;
+      stroke=&quot;red&quot;
+      stroke-width=&quot;2&quot;
+      stroke-dasharray=&quot;10,5,20&quot;
+    /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </section>
+
+          <section id="canvas" class="content-section">
+          <h3>2. Canvas</h3>
+          <p>
+           <div id="canvas">
+          <h1>SVG Canvas</h1><br><br><br>
+          <canvas
+            id="my-canvas-text"
+            width="200"
+            height="100"
+            style="border: 1px solid red"
+          ></canvas>
+          <script>
+            var ctx = document
+              .getElementById("my-canvas-text")
+              .getContext("2d");
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "blue";
+            ctx.fillText("Sheikh Ahasunul", 10, 50);
+          </script>
+
+          <canvas
+            id="my-canvas-line"
+            width="200"
+            height="100"
+            style="border: 1px solid chartreuse"
+          ></canvas>
+          <script>
+            var ctx = document
+              .getElementById("my-canvas-line")
+              .getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(200, 100);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 5;
+            ctx.stroke();
+          </script>
+
+          <canvas
+            id="my-canvas-circle"
+            width="200"
+            height="100"
+            style="border: 1px solid chartreuse"
+          ></canvas>
+          <script>
+            var ctx = document
+              .getElementById("my-canvas-circle")
+              .getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 50, 40, 0, 2 * Math.PI);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 4;
+            ctx.stroke();
+          </script>
+
+          <canvas
+            id="my-canvas-rect"
+            width="200"
+            height="100"
+            style="border: 1px solid chartreuse"
+          ></canvas>
+          <script>
+            var ctx = document
+              .getElementById("my-canvas-rect")
+              .getContext("2d");
+            ctx.rect(20, 20, 160, 60);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 3;
+            ctx.stroke();
+          </script>
+
+          <canvas
+            id="my-canvas-gradient"
+            width="200"
+            height="100"
+            style="border: 1px solid chartreuse"
+          ></canvas>
+          <script>
+            var ctx = document
+              .getElementById("my-canvas-gradient")
+              .getContext("2d");
+            var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "yellow");
+            ctx.fillStyle = grd;
+            ctx.fillRect(20, 20, 160, 60);
+          </script>
+
+          <canvas
+            id="my-canvas-image"
+            width="200"
+            height="100"
+            style="border: 1px solid chartreuse"
+          ></canvas>
+          <script>
+            var ctx = document
+              .getElementById("my-canvas-image")
+              .getContext("2d");
+            const image = new Image();
+            image.onload = function () {
+              ctx.drawImage(image, 30, 0, 150, 150);
+            };
+            image.src = "/Image/envlope.jpg";
+          </script>
+        </div>
+            
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;div id=&quot;canvas&quot;&gt;
+  &lt;h1&gt;SVG Canvas&lt;/h1&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;canvas
+    id=&quot;my-canvas-text&quot;
+    width=&quot;200&quot;
+    height=&quot;100&quot;
+    style=&quot;border: 1px solid red&quot;
+  &gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    var ctx = document
+      .getElementById(&quot;my-canvas-text&quot;)
+      .getContext(&quot;2d&quot;);
+    ctx.font = &quot;20px Arial&quot;;
+    ctx.fillStyle = &quot;blue&quot;;
+    ctx.fillText(&quot;Sheikh Ahasunul&quot;, 10, 50);
+  &lt;/script&gt;
+
+  &lt;canvas
+    id=&quot;my-canvas-line&quot;
+    width=&quot;200&quot;
+    height=&quot;100&quot;
+    style=&quot;border: 1px solid red&quot;
+  &gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    var ctx = document
+      .getElementById(&quot;my-canvas-line&quot;)
+      .getContext(&quot;2d&quot;);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.strokeStyle = &quot;red&quot;;
+    ctx.lineWidth = 5;
+    ctx.stroke();
+  &lt;/script&gt;
+
+  &lt;canvas
+    id=&quot;my-canvas-circle&quot;
+    width=&quot;200&quot;
+    height=&quot;100&quot;
+    style=&quot;border: 1px solid red&quot;
+  &gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    var ctx = document
+      .getElementById(&quot;my-canvas-circle&quot;)
+      .getContext(&quot;2d&quot;);
+    ctx.beginPath();
+    ctx.arc(100, 50, 40, 0, 2 * Math.PI);
+    ctx.strokeStyle = &quot;red&quot;;
+    ctx.lineWidth = 4;
+    ctx.stroke();
+  &lt;/script&gt;
+
+  &lt;canvas
+    id=&quot;my-canvas-rect&quot;
+    width=&quot;200&quot;
+    height=&quot;100&quot;
+    style=&quot;border: 1px solid red&quot;
+  &gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    var ctx = document
+      .getElementById(&quot;my-canvas-rect&quot;)
+      .getContext(&quot;2d&quot;);
+    ctx.rect(20, 20, 160, 60);
+    ctx.strokeStyle = &quot;red&quot;;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  &lt;/script&gt;
+
+  &lt;canvas
+    id=&quot;my-canvas-gradient&quot;
+    width=&quot;200&quot;
+    height=&quot;100&quot;
+    style=&quot;border: 1px solid red&quot;
+  &gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    var ctx = document
+      .getElementById(&quot;my-canvas-gradient&quot;)
+      .getContext(&quot;2d&quot;);
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, &quot;red&quot;);
+    grd.addColorStop(1, &quot;yellow&quot;);
+    ctx.fillStyle = grd;
+    ctx.fillRect(20, 20, 160, 60);
+  &lt;/script&gt;
+
+  &lt;canvas
+    id=&quot;my-canvas-image&quot;
+    width=&quot;200&quot;
+    height=&quot;100&quot;
+    style=&quot;border: 1px solid red&quot;
+  &gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    var ctx = document
+      .getElementById(&quot;my-canvas-image&quot;)
+      .getContext(&quot;2d&quot;);
+    const image = new Image();
+    image.onload = function () {
+      ctx.drawImage(image, 30, 0, 150, 150);
+    };
+    image.src = &quot;/Image/envlope.jpg&quot;;
+  &lt;/script&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </section>
+        
+        <div class="button">
+          <a href="chapter_06.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_08.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 16 - CSS Display</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: kalpurush, sans-serif;
+  background-color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+.d-block {
+  display: block;
+  background: chartreuse;
+  margin-bottom: 5px;
+  height: 50px;
+  color: white;
+}
+.d-inline {
+  display: inline;
+  background: chartreuse;
+  height: 50px;
+  color: white;
+  margin-right: 20px;
+}
+.d-inline-block {
+  display: inline-block;
+  background: chartreuse;
+  width: 150px;
+  padding: 5px;
+  color: white;
+}
+.d-none {
+  display: none;
+}
+.v-hidden {
+  visibility: hidden;
+  background: chartreuse;
+}
+.fit-box img {
+  width: 250px;
+  height: 200px;
+  border: 2px solid chartreuse;
+  background: white;
+  margin-right: 20px;
+}
+.fit-contain {
+  object-fit: contain;
+}
+.fit-cover {
+  object-fit: cover;
+}
+.fit-fill {
+  object-fit: fill;
+}
+.fit-none {
+  object-fit: none;
+}
+.cursor-grid div {
+  padding: 60px;
+  background: chartreuse;
+  border: 1px solid rgb(11, 153, 224);
+  display: inline-block;
+  margin: 5px;
+  color: white;
+  border-radius: 25px;
+  font-weight: 900;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.c-not-allowed {
+  cursor: not-allowed;
+}
+.c-grab {
+  cursor: grab;
+}
+.c-text {
+  cursor: text;
+}
+.overflow-box {
+  width: 200px;
+  height: 60px;
+  border: 1px solid chartreuse;
+  margin-bottom: 10px;
+}
+.ov-visible {
+  overflow: visible;
+}
+.ov-hidden {
+  overflow: hidden;
+}
+.ov-scroll {
+  overflow: scroll;
+}
+.ov-auto {
+  overflow: auto;
+}
+.op-100 {
+  opacity: 1;
+  background: chartreuse;
+  padding: 10px;
+  color: white;
+}
+.op-50 {
+  opacity: 0.5;
+  background: chartreuse;
+  padding: 10px;
+  color: white;
+}
+.op-25 {
+  opacity: 0.25;
+  background: chartreuse;
+  padding: 10px;
+  color: white;
+}
+.shadow-text {
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px #000000;
+}
+.shadow-box {
+  width: 150px;
+  padding: 20px;
+  background: white;
+  box-shadow: 10px 10px 5px black;
+  border: 1px solid chartreuse;
+}
+.multi-col {
+  column-count: 3;
+  column-gap: 30px;
+  column-rule: 1px solid chartreuse;
+}
+.col-span {
+  column-span: all;
+  background: chartreuse;
+  text-align: center;
+}
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.styled-table th,
+.styled-table td {
+  border: 1px solid chartreuse;
+  padding: 8px;
+}
+.styled-table th{
+  color: white;
+}
+.styled-table th {
+  background-color: chartreuse;
+  text-align: left;
+}
+.list-circle {
+  list-style-type: circle;
+}
+.list-roman {
+  list-style-type: upper-roman;
+}
+.list-none {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.trans-box {
+  width: 150px;
+  height: 150px;
+  background-color: chartreuse;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  transition: transform 1s;
+}
+.tr-translate:hover {
+  transform: translate(20px, -20px);
+}
+.tr-rotate:hover {
+  transform: rotate(45deg);
+}
+.tr-scale:hover {
+  transform: scale(1.5);
+}
+.tr-skew:hover {
+  transform: skewX(20deg);
+}
+      .col {
+  display: inline-block;
+  width: 250px;
+  margin: 30px;
+  list-style-position: inside;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.square {
+  list-style-type: square;
+}
+ol.upper-roman {
+  list-style-type: upper-roman;
+}
+ol.lower-alpha {
+  list-style-type: lower-alpha;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 16</h1>
+        <p style="font-size: 21px; color: white">CSS Display</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li>
+              <a href="#DisplayAndVisibility">1. Display Vs Visibility</a>
+            </li>
+            <li>
+              <a href="#CSSObjectFit">2. CSS Object Fit</a>
+            </li>
+            <li>
+              <a href="#Cursor">3. Cursor</a>
+            </li>
+            <li>
+              <a href="#OverFlow">4. Over Flow</a>
+            </li>
+            <li>
+              <a href="#Opacity">5. CSS Opacity</a>
+            </li>
+            <li>
+              <a href="#Shadow">6. CSS Shadow</a>
+            </li>
+            <li>
+              <a href="#MultipleColumns">7. CSS Multiple Columns</a>
+            </li>
+            <li>
+              <a href="#Table">8. CSS Table</a>
+            </li>
+            <li>
+              <a href="#Lists">9. CSS Lists</a>
+            </li>
+            <li>
+              <a href="#Transforms">10. CSS Transforms</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="DisplayAndVisibility" class="content-section">
+          <h3>1. Display Vs Visibility</h3>
+          <p>
+            In HTML5, semantic elements are used to give meaning to the content
+            they contain. These elements help improve the structure and
+            accessibility of a webpage by clearly defining the purpose of each
+            section of content. Semantic elements can be broadly categorized
+            into three main types: structural elements, layout elements, and
+            formatting elements.
+            <br />
+            <div class="example">
+            <div class="d-block">Block Element 1</div> <br>
+            <div class="d-block">Block Element 2</div>
+            <br>
+            <div class="d-inline">Inline 1</div> 
+            <div class="d-inline">Inline 2</div>
+            <br>
+            <br>
+            <div class="d-inline-block">Inline-Block 1</div>
+            <div class="d-inline-block">Inline-Block 2</div>
+            <br>
+            <br>
+            <div>I am visible.</div>
+            <div class="d-none">I am display: none (I don't exist here).</div>
+            <div class="v-hidden">I am visibility: hidden (I leave a gap).</div>
+            <div>I am visible.</div>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.d-block {
+  display: block;
+  background: red;
+  margin-bottom: 5px;
+  height: 50px;
+  color: white;
+}
+.d-inline {
+  display: inline;
+  background: red;
+  height: 50px;
+  color: white;
+  margin-right: 20px;
+}
+.d-inline-block {
+  display: inline-block;
+  background: red;
+  width: 150px;
+  padding: 5px;
+  color: white;
+}
+.d-none {
+  display: none;
+}
+.v-hidden {
+  visibility: hidden;
+  background: red;
+}</code></pre>
+          </div>
+        </section> 
+
+        <section id="CSSObjectFit" class="content-section">
+          <h3>2. CSS Object Fit</h3>
+          <p>
+            CSS Object Fit is a property that allows you to control how an image
+            or video fits within its container. It provides several values such
+            as contain, cover, fill, and none, which determine how the media
+            should be resized and cropped to fit the container. This property is
+            particularly useful for maintaining the aspect ratio of images and
+            videos while ensuring they fit within their designated space on a
+            webpage.
+            <br>
+            <div class="example fit-box">
+      <img class="fit-contain" src="Image/jhal.jpg" alt="Contain">
+      <img class="fit-cover" src="Image/jhal.jpg" alt="Cover">
+      <img class="fit-fill" src="Image/jhal.jpg" alt="Fill">
+    </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.fit-contain { object-fit: contain; }
+.fit-cover { object-fit: cover; }
+.fit-fill { object-fit: fill; }</code></pre>
+          </div>
+        </section>
+
+        <section id="Cursor" class="content-section">
+          <h3>3. Cursor</h3>
+          <p> 
+            The CSS Cursor property is used to specify the type of cursor that
+            should be displayed when a user hovers over an element on a webpage.
+            It allows web developers to enhance user experience by providing
+            visual feedback based on the context of the interaction. Common
+            cursor values include pointer, default, text, not-allowed, and grab,
+            among others, each indicating a different type of interaction or
+            functionality associated with the element.
+            <br>
+            <div class="example cursor-grid">
+              <div class="c-pointer">Pointer</div>
+              <div class="c-not-allowed">Not Allowed</div>
+              <div class="c-grab">Grab</div>
+              <div class="c-text">Text</div>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code> .cursor-grid div {
+        padding: 60px;
+        background: red;
+        border: 1px solid tomato;
+        display: inline-block;
+        margin: 5px;
+        color: white;
+        border-radius: 25px;
+        font-weight: 900;
+      }
+
+      .c-pointer {
+        cursor: pointer;
+      }
+
+      .c-not-allowed {
+        cursor: not-allowed;
+      }
+
+      .c-grab {
+        cursor: grab;
+      }
+
+      .c-text {
+        cursor: text;
+      }
+</code></pre>
+          </div>
+        </section>
+
+        <section id="OverFlow" class="content-section">
+          <h3>4. Over Flow</h3>
+          <p>
+            The CSS Overflow property is used to control how content that exceeds
+            the dimensions of its container is handled on a webpage. It allows
+            developers to specify whether the overflowed content should be
+            visible, hidden, scrollable, or automatically managed based on the
+            content size. This property is essential for maintaining a clean and
+            organized layout, especially when dealing with dynamic content or
+            responsive designs.
+            <br>
+            <div class="example">
+              <div class="overflow-box ov-visible">Overflow: Visible (default) Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, temporibus!</div><br>
+              <div class="overflow-box ov-hidden">Overflow: Hidden Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, temporibus!</div><br>
+              <div class="overflow-box ov-scroll">Overflow: Scroll Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, temporibus!</div><br>
+              <div class="overflow-box ov-auto">Overflow: Auto Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, temporibus!</div>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.ov-visible { overflow: visible; }
+.ov-hidden { overflow: hidden; }
+.ov-scroll { overflow: scroll; }
+.ov-auto { overflow: auto; }</code></pre>
+          </div>
+        </section>
+
+        <section id="Opacity" class="content-section">
+          <h3>5. CSS Opacity</h3>
+          <p>
+            CSS Opacity is a property that allows you to control the transparency
+            of an element on a webpage. It accepts values between 0 and 1, where
+            0 means completely transparent and 1 means fully opaque. This
+            property is useful for creating visual effects, such as fading
+            elements in or out, layering content, or adding emphasis to certain
+            parts of a webpage while keeping others less prominent.
+            <br>
+            <div class="example">
+              <div class="op-100">Opacity: 1 (Fully Opaque)</div><br>
+              <div class="op-50">Opacity: 0.5 (Semi-Transparent)</div><br>
+              <div class="op-25">Opacity: 0.25 (More Transparent)</div>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.op-100 { opacity: 1; }
+.op-50 { opacity: 0.5; }
+.op-25 { opacity: 0.25; }</code></pre>
+          </div>
+        </section>
+
+        <section id="Shadow" class="content-section">
+          <h3>6. CSS Shadow</h3>
+          <p>
+            CSS Shadow is a property that allows you to add shadow effects to
+            elements on a webpage. It includes properties like text-shadow for
+            adding shadows to text and box-shadow for adding shadows to boxes or
+            other elements. These properties enable developers to create depth,
+            highlight important content, and enhance the overall visual appeal of
+            a webpage by simulating light and shadow effects.
+            <br>
+            <div class="example">
+              <div class="shadow-text">Text Shadow Example</div><br>
+              <div class="shadow-box">Box Shadow Example</div><br>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.shadow-text {
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px #000000;
+}
+.shadow-box {
+  box-shadow: 2px 2px 4px #000000;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="MultipleColumns" class="content-section">
+          <h3>7. CSS Multiple Columns</h3>
+          <p>
+            CSS Multiple Columns is a property that allows you to divide content
+            into multiple columns, similar to how text is formatted in newspapers
+            or magazines. It provides properties such as column-count, column-gap,
+            and column-rule, which enable developers to control the number of
+            columns, the spacing between them, and the visual separation between
+            columns. This feature is particularly useful for improving readability
+            and creating visually appealing layouts for large blocks of text.
+            <br>
+            <br>
+            <div class="example">
+              <div class="multi-col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                temporibus! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Omnis, temporibus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Omnis, temporibus! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis, temporibus! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Omnis, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                temporibus! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Omnis, temporibus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Omnis, temporibus! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis, temporibus! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Omnis, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                temporibus! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Omnis, temporibus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Omnis, temporibus! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis, temporibus! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Omnis, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                temporibus! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Omnis, temporibus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Omnis, temporibus! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis, temporibus! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Omnis, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                temporibus! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Omnis, temporibus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Omnis, temporibus! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis, temporibus! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Omnis, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                temporibus! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Omnis, temporibus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Omnis, temporibus! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Omnis, temporibus! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Omnis, temporibus!
+              </div><br>
+              <div class="col-span" style="color: white;">This element spans all columns</div>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.multi-col {
+  column-count: 3;
+  column-gap: 30px;
+  column-rule: 1px solid red;
+}
+.col-span {
+  column-span: all;
+  background: red;
+  text-align: center;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Table" class="content-section">
+          <h3>8. CSS Table</h3>
+          <p>
+            CSS Table is a property that allows you to style HTML tables to
+            enhance their appearance and improve readability. It includes
+            properties such as border-collapse, border-spacing, and various
+            styling options for table headers, rows, and cells. By using CSS
+            Table properties, developers can create visually appealing tables that
+            effectively present data while maintaining a consistent design with the
+            rest of the webpage.
+            <br>
+            <br>
+            <table class="styled-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1294372</td>
+            <td>Sheikh Ahasunul Islam</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+            <td>1294370</td>
+            <td>Abir Islam</td>
+            <td>User</td>
+          </tr>
+            <tr>
+            <td>1294375</td>
+            <td>Rakibul Islam</td>
+            <td>User</td>
+          </tr>
+            <tr>
+            <td>1294379</td>
+            <td>Hasim Islam</td>
+            <td>User</td>
+          </tr>
+        </tbody>
+      </table>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.styled-table th,
+.styled-table td {
+  border: 1px solid red;
+  padding: 8px;
+}
+.styled-table th{
+  color: white;
+}
+.styled-table th {
+  background-color: red;
+  text-align: left;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Lists" class="content-section">
+          <h3>9. CSS Lists</h3>
+          <p>
+            CSS Lists is a property that allows you to style HTML lists, including
+            ordered lists (ol) and unordered lists (ul). It provides properties
+            such as list-style-type, list-style-image, and list-style-position,
+            which enable developers to customize the appearance of list items,
+            including bullet styles, numbering formats, and the position of
+            markers. By using CSS Lists properties, developers can create visually
+            appealing and well-structured lists that enhance the overall design of
+            a webpage.
+             <div class="col">
+            <p>Unordered lists:</p>
+            <ul>
+              <p>Fruits</p>
+              <li>Apple</li>
+              <li>Banana</li>
+              <li>Orange</li>
+              <li>Mango</li>
+              <li>Strawberry</li>
+            </ul>
+            <br>
+            <br>
+            <ul class="circle">
+              <p>Vegetable</p>
+              <li>Carrot</li>
+              <li>Broccoli</li>
+              <li>Potato</li>
+              <li>Cucumber</li>
+              <li>Eggplant</li>
+            </ul>
+            <br />
+            <br>
+            <ul class="square">
+              <p>Fish</p>
+              <li>Salmon</li>
+              <li>Tuna</li>
+              <li>Goldfish</li>
+              <li>Catfish</li>
+              <li>Catla</li>
+            </ul>
+          </div>
+          <div class="col">
+            <p>Ordered lists:</p>
+            <ol>
+              <p>Fruits</p>
+              <li>Apple</li>
+              <li>Banana</li>
+              <li>Orange</li>
+              <li>Mango</li>
+              <li>Strawberry</li>
+            </ol>
+            <br />
+            <ol class="upper-roman">
+              <p>Vegetable</p>
+              <li>Carrot</li>
+              <li>Broccoli</li>
+              <li>Potato</li>
+              <li>Cucumber</li>
+              <li>Eggplant</li>
+            </ol>
+            <br />
+            <ol class="lower-alpha"><br><br>
+              <p>Fish</p>
+              <li>Salmon</li>
+              <li>Tuna</li>
+              <li>Goldfish</li>
+              <li>Catfish</li>
+              <li>Catla</li>
+            </ol>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.col {
+  display: inline-block;
+  width: 250px;
+  margin: 30px;
+  list-style-position: inside;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.square {
+  list-style-type: square;
+}
+ol.upper-roman {
+  list-style-type: upper-roman;
+}
+ol.lower-alpha {
+  list-style-type: lower-alpha;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Transforms" class="content-section">
+          <h3>10. CSS Transforms</h3>
+          <p>
+            CSS Transforms is a property that allows you to apply various
+            transformations to elements on a webpage, such as translation,
+            rotation, scaling, and skewing. It provides properties like transform
+            and transform-origin, which enable developers to manipulate the
+            position, size, and orientation of elements in a 2D or 3D space. By
+            using CSS Transforms, developers can create dynamic and interactive
+            effects that enhance the user experience and visual appeal of a
+            webpage.
+            <br>
+            <div class="example">
+              <div class="trans-box tr-translate">Translate</div>
+              <div class="trans-box tr-rotate">Rotate</div>
+              <div class="trans-box tr-scale">Scale</div>
+              <div class="trans-box tr-skew">Skew</div>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.trans-box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  transition: transform 1s;
+}
+.tr-translate:hover {
+  transform: translate(20px, -20px);
+}
+.tr-rotate:hover {
+  transform: rotate(45deg);
+}
+.tr-scale:hover {
+  transform: scale(1.5);
+}
+.tr-skew:hover {
+  transform: skewX(20deg);
+}</code></pre>
+          </div>
+        </section>
+        <div class="button">
+          <a href="chapter_15.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_17.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

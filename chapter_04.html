@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 04 - Semantic HTML</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 04</h1>
+        <p style="font-size: 21px; color: white">Semantic Html</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#SemanticElements">1. Semantic Elements</a></li>
+            <li>
+              <a href="#SemanticLayoutElements">2. Semantic Layout Elements</a>
+            </li>
+            <li>
+              <a href="#SemanticFormattingElements"
+                >3. Semantic Formatting Elements</a
+              >
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="SemanticElements" class="content-section">
+          <h3>1. Semantic Elements</h3>
+          <p>
+            Semantic elements clearly describe their meaning in a human- and
+            machine-readable way. Examples of semantic elements include
+            &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;,
+            and &lt;nav&gt;. These elements provide information about the
+            structure and content of a webpage, making it easier for both
+            developers and browsers to understand the layout and purpose of
+            different sections.
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>&lt;article&gt;, &lt;aside&gt;, &lt;details&gt;, &lt;figcaption&gt;, 
+&lt;figure&gt;, &lt;footer&gt;, &lt;header&gt;, &lt;main&gt;, &lt;mark&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;summary&gt;, &lt;time&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="SemanticLayoutElements" class="content-section">
+          <h3>2. Semantic Layout Elements</h3>
+          <p>
+            Semantic layout elements are used to structure the content of a
+            webpage in a meaningful way. For example, &lt;header&gt; is
+            typically used for introductory content or navigation links, while
+            &lt;footer&gt; is used for information about the author, copyright,
+            or related documents. &lt;article&gt; represents a self-contained
+            piece of content that could be distributed independently, and
+            &lt;section&gt; is used to group related content together. Using
+            these elements helps improve the accessibility and SEO of a webpage.
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, 
+&lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="SemanticFormattingElements" class="content-section">
+          <h3>3. Semantic Formatting Elements</h3>
+          <p>
+            Semantic formatting elements are used to indicate the meaning of the
+            content they contain. For example, &lt;mark&gt; is used to highlight
+            text, &lt;time&gt; is used to represent a specific time or date, and
+            &lt;details&gt; can be used to create an interactive widget that
+            users can open and close to reveal additional information. These
+            elements help convey the purpose of the content and enhance the user
+            experience.
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>&lt;strong&gt;, &lt;em&gt;, &lt;mark&gt;, &lt;cite&gt;, 
+&lt;blockquote&gt;, &lt;abbr&gt;, &lt;code&gt;, &lt;pre&gt;, &lt;time&gt;</code></pre>
+          </div>
+        </section>
+        <div class="button">
+          <a href="chapter_03.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_05.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

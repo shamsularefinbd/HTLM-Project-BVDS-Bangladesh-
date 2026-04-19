@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 13 - CSS Colors</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .name {
+        background-color: chartreuse;
+        color: white;
+      }
+
+      .name-2 {
+        background-color: slateblue;
+        color: gold;
+      }
+
+      .hex {
+        background-color: chartreuse;
+        color: #ffffff;
+      }
+
+      .hex-2 {
+        background-color:chartreuse;
+        color: #f8f9fa;
+      }
+
+      .rgb {
+        background-color:chartreuse(227, 36, 36);
+        color: rgb(255, 255, 255);
+      }
+
+      .rgba {
+        background-color: chartreuse(236, 8, 11, 0.977);
+        color: black;
+      }
+
+      .grey-light {
+        background-color: #eeeeee;
+        color: #333333;
+      }
+
+      .grey-dark {
+        background-color: rgb(60, 60, 60);
+        color: rgb(200, 200, 200);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 13</h1>
+        <p style="font-size: 21px; color: white">CSS Colors</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid red;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#ColorNames">1. Color Names</a></li>
+            <li>
+              <a href="#HexColors">2. Hex Colors</a>
+            </li>
+            <li>
+              <a href="#RGBColors">3. RGB Colors</a>
+            </li>
+            <li>
+              <a href="#GreyColors">4. Grey Colors</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="ColorNames" class="content-section">
+          <h3>1. Color Names</h3>
+          <p>
+            CSS supports a wide range of color names that can be used to specify
+            colors in your stylesheets. These color names are predefined and
+            recognized by all modern browsers. For example, you can use color
+            names like "red", "blue", "green", "yellow", "cyan", "magenta",
+            "orange", and many more to set the color of text, backgrounds, and
+            other elements on a webpage. Using color names can make your CSS
+            code more readable and easier to understand.
+            <br />
+            <div class="example name">
+              I am colored using 'tomato'.
+            </div>
+            <br>
+            <div class="example name-2">
+              I am colored using 'slateblue'.
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.name {
+  background-color: tomato;
+  color: white;
+}
+
+.name-2 {
+  background-color: slateblue;
+  color: gold;
+}</code></pre>
+          </div>
+        </section> 
+
+        <section id="HexColors" class="content-section">
+          <h3>2. Hex Colors</h3>
+          <p>
+            Hexadecimal (hex) colors are a way to represent colors in CSS using a
+            six-digit code. The code consists of three pairs of hexadecimal
+            digits, where each pair represents the intensity of red, green, and
+            blue (RGB) components of the color. For example, the hex code
+            "#f03c14" represents a shade of red, where "f0" is the intensity of
+            red, "3c" is the intensity of green, and "14" is the intensity of
+            blue. Hex colors are widely used in web design and allow for a vast
+            range of color options.
+            <br />
+            <div class="example hex">
+              I am colored using '#f03c14'.
+            </div>
+            <br>
+            <div class="example hex-2">
+              I am colored using '#bc0d0d'.
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.hex {
+  background-color: #f03c14;
+  color: white;
+}
+
+.hex-2 {
+  background-color: #bc0d0d;
+  color: white;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="RGBColors" class="content-section">
+          <h3>3. RGB Colors</h3> 
+          <p>
+            RGB (Red, Green, Blue) colors are a way to specify colors in CSS using
+            the RGB color model. In this model, colors are defined by their
+            red, green, and blue components, each of which can have a value
+            ranging from 0 to 255. For example, the RGB color "rgb(227, 36,
+            36)" represents a shade of red where the red component has an
+            intensity of 227, the green component has an intensity of 36, and
+            the blue component has an intensity of 36. RGB colors can also be
+            specified using RGBA (Red, Green, Blue, Alpha) format, which includes
+            an additional alpha channel for transparency.
+            <br />
+            <div class="example rgb">
+              I am colored using 'rgb(227, 36, 36)'.
+            </div>
+            <br>
+            <div class="example rgba">
+              I am colored using 'rgba(236, 8, 11, 0.977)'.
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.rgb {
+  background-color: rgb(227, 36, 36);
+  color: white;
+}
+
+.rgba {
+  background-color: rgba(236, 8, 11, 0.977);
+  color: white;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="GreyColors" class="content-section">
+          <h3>4. Grey Colors</h3>
+          <p>
+            Grey colors in CSS can be created using various methods, including
+            color names, hex codes, and RGB values. For example, you can use the
+            color name "lightgrey" to create a light grey color, or you can use
+            the hex code "#eeeeee" for a similar effect. Additionally, you can
+            specify grey colors using RGB values where the red, green, and blue
+            components are equal, such as "rgb(60, 60, 60)" for a darker grey.
+            Grey colors are often used in web design for backgrounds, borders,
+            and text to create a neutral and balanced look.
+            <br />
+            <div class="example grey-light">
+              I am colored using 'lightgrey'.
+            </div>
+            <br>
+            <div class="example grey-dark">
+              I am colored using 'grey-dark'.
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.grey-light {
+  background-color: #eeeeee;
+  color: #333333;
+}
+
+.grey-dark {
+  background-color: #3c3c3c;
+  color: white;
+}
+</code></pre>
+          </div>
+        </section>
+
+        <div class="button">
+          <a href="chapter_12.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_14.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 19 - Advanced CSS</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --primary-brand: chartreuse;
+        --secondary-brand: #0c0c0c;
+        --alert-color: chartreuse;
+        --text-muted: #895353;
+        --card-padding: 20px;
+        --border-radius-md: 8px;
+      }
+
+      .theme-card {
+        background-color: white;
+        border: 1px solid var(--primary-brand);
+        border-radius: var(--border-radius-md);
+        padding: var(--card-padding);
+        color: var(--primary-brand);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .theme-btn {
+        background-color: var(--secondary-brand);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .calc-container {
+        height: 200px;
+        border: 1px dashed chartreuse(209, 13, 13);
+        background-color: var(--primary-brand);
+        position: relative;
+      }
+
+      .calc-sidebar {
+        width: 200px;
+        height: 100%;
+        background-color: #fededf;
+        float: left;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .calc-content {
+        width: calc(100% - 200px);
+        height: 100%;
+        background-color: white;
+        float: left;
+        padding: 20px;
+        box-sizing: border-box;
+        border-left: 1px solid #ccc;
+      }
+
+      .legal-doc {
+        counter-reset: section;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid chartreuse;
+      }
+
+      .legal-doc h4 {
+        counter-reset: clause;
+        color: chartreuse;
+        margin-top: 20px;
+      }
+
+      .legal-doc h4::before {
+        counter-increment: section;
+        content: "Section " counter(section) ": ";
+      }
+
+      .legal-doc p.clause::before {
+        counter-increment: clause;
+        content: counter(section) "." counter(clause) " ";
+        font-weight: bold;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 19</h1>
+        <p style="font-size: 21px; color: white">Advanced CSS</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#CSSVariables">1. CSS Variables</a></li>
+            <li>
+              <a href="#CSSCalculation">2. CSS Calculation</a>
+            </li>
+            <li>
+              <a href="#CSSCounters">3. CSS Counters</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="CSSVariables" class="content-section">
+          <h3>1. CSS Variables</h3>
+          <p>
+            CSS variables, also known as custom properties, allow you to store
+            values that can be reused throughout your CSS. They are defined
+            using the -- prefix and can be accessed using the var() function.
+            For example, you can define a primary color variable and use it for
+            multiple elements, ensuring consistency and making it easier to
+            update the color scheme of your website. CSS variables can also be
+            dynamic, allowing you to change their values based on user
+            interactions or media queries.
+            <br />
+          <div id="cssVariables">
+          <div class="theme-card">
+            <h4>Standard Account Card</h4><br>
+            <p>
+              This card uses `var(--primary-brand)` for its border and text
+              color, and `var(--card-padding)` for spacing.
+            </p>
+            <button class="theme-btn">
+              Action Button (Secondary Brand Color)
+            </button>
+          </div>
+          <br />
+          <p>
+            <small
+              >If we change `--primary-brand` in the CSS file, every single card
+              on the website updates instantly.</small
+            >
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>:root {
+  --primary-brand: red;
+  --secondary-brand: #0c0c0c;
+  --alert-color: red;
+  --text-muted: #895353;
+  --card-padding: 20px;
+  --border-radius-md: 8px;
+}
+.theme-card {
+  background-color: white;
+  border: 1px solid var(--primary-brand);
+  border-radius: var(--border-radius-md);
+  padding: var(--card-padding);
+  color: var(--primary-brand);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.theme-btn {
+  background-color: var(--primary-brand);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSCalculation" class="content-section">
+          <h3>2. CSS Calculation</h3> 
+          <p>
+            The calc() function in CSS allows you to perform calculations to determine
+            CSS property values. This is particularly useful for responsive design, where you may want to set widths, heights, or other properties based on a combination of fixed and relative units. For example, you can use calc(100% - 200px) to create a layout where an element takes up the remaining space after accounting for a fixed width sidebar. The calc() function can handle addition (+), subtraction (-), multiplication (*), and division (/) operations, making it a powerful tool for dynamic styling.
+            <br>
+            <div id="cssCalculation">
+          <div class="calc-container">
+            <div class="calc-sidebar"><br>
+              <strong>Sidebar</strong><br />
+              Width: 200px (Fixed)
+            </div>
+            <div class="calc-content">
+              <strong>Main Content Area</strong><br />
+              Width: <code>calc(100% - 200px)</code> <br /><br />
+              This area automatically fills the remaining space, ensuring the
+              layout never breaks regardless of screen size.
+            </div>
+            <div style="clear: both"></div>
+          </div>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.calc-container {
+  height: 200px;
+  border: 1px dashed rgb(209, 13, 13);
+  background-color: var(--primary-brand);
+  position: relative;
+}
+.calc-sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #fededf;
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.calc-content {
+  width: calc(100% - 200px);
+  height: 100%;
+  background-color: white;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  border-left: 1px solid #ccc;
+}
+</code></pre>
+          </div>
+        </section>
+
+        <section id="CSSCounters" class="content-section">
+          <h3>3. CSS Counters</h3>
+          <p>
+            CSS counters are a feature that allows you to automatically number
+            elements in a document. They are particularly useful for creating
+            numbered lists, section headings, and other content that needs to be
+            numbered. Counters are initialized using the `counter-reset` property
+            and incremented using the `counter-increment` property. The value of
+            a counter can be displayed using the `content` property with the
+            `counter()` function. For example, you can create a legal document with sections and clauses that are automatically numbered based on their hierarchy. This helps maintain consistency and saves time when adding or rearranging content.
+            <br>
+            <div class="legal-doc">
+            <h4>Terms of Service</h4>
+            <p class="clause">User Responsibilities.</p>
+            <p class="clause">Account Security Mandates.</p>
+            <p class="clause">Liability Limitations.</p>
+
+            <h4>Privacy Policy</h4>
+            <p class="clause">Data Collection.</p>
+            <p class="clause">Third-Party Sharing.</p>
+
+            <h4>Dispute Resolution</h4>
+            <p class="clause">Arbitration Process.</p>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.legal-doc {
+  counter-reset: section;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid red;
+}
+.legal-doc h4 {
+  counter-reset: clause;
+  color: red;
+  margin-top: 20px;
+}
+.legal-doc h4::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+.legal-doc p.clause::before {
+  counter-increment: clause;
+  content: counter(section) "." counter(clause) " ";
+  font-weight: bold;
+  color: white;
+}
+</code></pre>
+          </div>
+        </section>
+        <div class="button">
+          <a href="chapter_18.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_20.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

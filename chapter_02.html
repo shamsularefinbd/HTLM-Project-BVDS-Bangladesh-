@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 02 - HTML Element</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 02</h1>
+          <p style="font-size: 21px; color: white">
+            HTML Element
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid chartreuse; border-radius: 15px;">
+          <ol>
+            <li><a href="#Heading">1. Heading</a></li>
+            <li><a href="#Paragraph">2. Paragraph</a></li>
+            <li><a href="#Hyperlink">3. Hyperlink </a></li>
+            <li><a href="#Image">4. Image</a></li>
+            <li><a href="#ImageMap">5. Image Map</a></li>
+            <li><a href="#List">6. List</a></li>
+            <li><a href="#Table">7. Table</a></li>
+            <li><a href="#Break">8. Break</a></li>
+            <li><a href="#ProgressBars">9. Progress Bars</a></li>
+            <li><a href="#ComputerCode">10. Computer Code</a></li>
+            <li><a href="#Ifremes">11. Iframes</a></li>
+            <li><a href="#HtmlEntities">12. HTML Entities</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="Heading" class="content-section">
+          <h3>1. Heading</h3>
+          <p>
+            <h1>My First h1</h1>
+            <h2>My Second h2</h2>
+            <h4>My Fourth h4</h4>
+            <h5>My Fifth h5</h5>
+            <h6>My Sixth h6</h6>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;h1&gt;My First h1&lt;/h1&gt;
+&lt;h2&gt;My Second h2&lt;/h2&gt;
+&lt;h4&gt;My Fourth h4&lt;/h4&gt;
+&lt;h5&gt;My Fifth h5&lt;/h5&gt;
+&lt;h6&gt;My Sixth h6&lt;/h6&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="Paragraph" class="content-section">
+          <h3>2. Paragraph</h3>
+          <p>
+            The paragraph element is used to define a paragraph in HTML.
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;p&gt;
+  Welcome to my Webpage.
+&lt;/p&gt;</code></pre>
+        </section>
+
+          <section id="Hyperlink" class="content-section">
+          <h3>3. Hyperlink</h3>
+          <p>
+            The hyperlink element is used to create a link to another webpage or file. <a href="https://github.com/SKahasun">my GitHub Profile</a>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;a href=&quot;https://github.com/SKahasun&quot;&gt;my GitHub Profile&lt;/a&gt;</code></pre>
+        </section>
+
+          <section id="Image" class="content-section">
+          <h3>4. Image</h3>
+          <p>
+            The image element is used to embed an image in an HTML page. The src attribute specifies the path to the image file, and the alt attribute provides alternative text for the image if it cannot be displayed. <br>
+            <img src="Image/stasknop.jpg" alt="stasknop image" width="500"/>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;img src=&quot;Image/stasknop.jpg&quot; alt=&quot;stasknop image&quot; width=&quot;200&quot; /&gt;</code></pre>
+        </section>
+
+          <section id="#ImageMap" class="content-section">
+          <h3>5. Image Map</h3>
+          <p>
+            The image map element is used to define clickable areas on an image. The map element contains one or more area elements that define the clickable areas. <br>
+            <img src="Image/tankilevitch.jpg" usemap="#polaroid-map" alt="Three Polaroids on a white wooden surface" width="800">
+
+            <map name="polaroid-map">
+                <area shape="rect" coords="148,235,373,488" alt="Left Polaroid" href="https://images.pexels.com/photos/6024723/pexels-photo-6024723.jpeg">
+                
+                <area shape="rect" coords="425,232,653,485" alt="Middle Polaroid" href="https://images.pexels.com/photos/6024682/pexels-photo-6024682.jpeg">
+                
+                <area shape="rect" coords="684,228,910,481" alt="Right Polaroid" href="https://images.pexels.com/photos/6024717/pexels-photo-6024717.jpeg">
+            </map>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;img src=&quot;/Image/tankilevitch.jpg&quot; usemap=&quot;#polaroid-map&quot; alt=&quot;Three Polaroids on 
+a white woodensurface&quot; width=&quot;1024&quot; height=&quot;682&quot;&gt;
+
+&lt;map name=&quot;polaroid-map&quot;&gt;
+    &lt;area shape=&quot;rect&quot; coords=&quot;148,235,373,488&quot; alt=&quot;Left Polaroid&quot; 
+href=&quot;https://images.pexels.com/photos/6024723/pexels-photo-6024723.jpeg&quot;&gt;
+    
+    &lt;area shape=&quot;rect&quot; coords=&quot;425,232,653,485&quot; alt=&quot;Middle Polaroid&quot; href=&quot;
+https://images.pexels.com/photos/6024682/pexels-photo-6024682.jpeg&quot;&gt;
+    
+    &lt;area shape=&quot;rect&quot; coords=&quot;684,228,910,481&quot; alt=&quot;Right Polaroid&quot; href=&quot;
+https://images.pexels.com/photos/6024717/pexels-photo-6024717.jpeg&quot;&gt;
+&lt;/map&gt;</code></pre>
+        </section>
+
+          <section id="List" class="content-section">
+          <h3>6. List</h3>
+          <p>
+            The list element is used to create ordered and unordered lists in HTML. <br>
+            <strong>Ordered List:</strong>
+            <ol>
+              <li>First Item</li>
+              <li>Second Item</li>
+              <li>Third Item</li>
+            </ol>
+            <strong>Unordered List:</strong>
+            <ul>
+              <li>Apple</li>
+              <li>Banana</li>
+              <li>Orange</li>
+            </ul>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;strong&gt;Ordered List:&lt;/strong&gt;
+&lt;ol&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+  &lt;li&gt;Second Item&lt;/li&gt;
+  &lt;li&gt;Third Item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;strong&gt;Unordered List:&lt;/strong&gt;
+&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+  &lt;li&gt;Orange&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </section>
+
+        <section id="#Table" class="content-section">
+          <h3>7. Table</h3>
+          <p>
+            The table element is used to create tables in HTML. <br>
+            <strong>Table:</strong>
+            <table border="1" style="border: chartreuse; width: 800px;">
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+              </tr>
+              <tr>
+                <td>Ahmed</td>
+                <td>25</td>
+                <td>Dhaka</td>
+              </tr>
+              <tr>
+                <td>Rahim</td>
+                <td>30</td>
+                <td>Chittagong</td>
+              </tr>
+            </table>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;table border=&quot;1&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ahmed&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Dhaka&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Rahim&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;Chittagong&lt;/td&gt;
+&lt;/table&gt;</code></pre>
+        </section>
+
+        <section id="#Break" class="content-section">
+          <h3>8. Break</h3>
+          <p>
+            The break element is used to insert a line break in HTML. <br>
+            <strong>Example:</strong>
+            <br>
+            This is the first line.<br>
+            This is the second line.<br>
+            This is the third line.
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;br&gt;
+This is the first line.&lt;br&gt;
+This is the second line.&lt;br&gt;
+This is the third line.</code></pre>
+        </section>
+
+          <section id="#ProgressBars" class="content-section">
+          <h3>9. Progress Bars</h3>
+          <p>
+            The progress element is used to create a progress bar in HTML. The value attribute specifies the current value of the progress bar, and the max attribute specifies the maximum value of the progress bar. <br>
+            <strong>Example:</strong>
+            <progress value="70" max="100"></progress>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="#ComputerCode" class="content-section">
+          <h3>10. Computer Code</h3>
+          <p>
+            The <b>code</b> element defines computer code.
+            <code
+              >It will be displayed in the default monospace font of the
+              browser.</code
+            >
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;code&gt;It will be displayed in the default monospace font of the browser.&lt;/code&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="#Ifremes" class="content-section">
+          <h3>11. Iframes</h3>
+          <p>
+            The iframe element is used to embed another HTML page within the current page. The src attribute specifies the URL of the page to be embedded. <br>
+            <strong>Example:</strong>
+            <iframe
+              src="HomePage.html"
+              width="800"
+              height="600"
+            ></iframe>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;iframe src=&quot;/HomePage.html&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/iframe&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="#HtmlEntities" class="content-section">
+          <h3>12. HTML Entities</h3>
+          <p>
+            HTML entities are used to display special characters in HTML. For example, the &amp; entity is used to display the ampersand (&) character, and the &lt; entity is used to display the less-than (<) character. <br>
+            <span>
+          <p>This is a greater than symbol: &gt;</p>
+          <p>This is a less than symbol: &lt;</p>
+          <p>This is an ampersand: &amp;</p>
+          <p>This is a copyright symbol: &copy; 2025</p>
+          <p>This is a registered trademark symbol: &reg;</p>
+          <p>
+            Currency symbols: Dollar (&dollar;), Euro (&euro;), Pound (&pound;),
+            Yen (&yen;)
+          </p>
+          <p>
+            Mathematical symbols: Plus-Minus (&plusmn;), Multiplication
+            (&times;), Division (&divide;)
+          </p>
+            </span>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>&lt;p&gt;This is a greater than symbol: &amp;gt;&lt;/p&gt;
+&lt;p&gt;This is a less than symbol: &amp;lt;&lt;/p&gt;
+&lt;p&gt;This is an ampersand: &amp;amp;&lt;/p&gt;
+&lt;p&gt;This is a copyright symbol: &amp;copy; 2025&lt;/p&gt;
+&lt;p&gt;This is a registered trademark symbol: &amp;reg;&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+
+        <div class="button">
+          <a href="chapter_01.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_03.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

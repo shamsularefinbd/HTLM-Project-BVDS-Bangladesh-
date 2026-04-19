@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 10 - CSS Selectors</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+      <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+      <section class="welcome">
+        <div>
+          <h1>Chapter 10</h1>
+          <p style="font-size: 21px; color: white">
+            CSS Selectors
+          </p>
+        </div>
+      </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav class="tableNav" style="background-color: white; border: 3px solid red; border-radius: 15px;">
+          <ol>
+            <li><a href="#universal">1. Universal Selector</a></li>
+            <li><a href="#type">2. Type Selector</a></li>
+            <li><a href="#id">3. Id Selector</a></li>
+            <li><a href="#class">4. Class selector ,Multiclass selector, CSS Pseudo-class</a></li>
+            <li><a href="#pseudo-element">5. CSS Pseudo-Element</a></li>
+            <li><a href="#attribute">6. CSS Attribute Selector</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="universal" class="content-section">
+          <h3>1. Universal Selector</h3>
+          <p>
+            The universal selector (*) selects all elements in the document.
+            <br>
+            <div id="universalSelector">
+          <p>All <b>div</b> are apply with Uneversal Selector</p>
+        </div>
+
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }</code></pre>
+          </div>
+        </section>
+
+        <section id="type" class="content-section">
+          <h3>2. Type Selector</h3>
+          <p>
+            The type selector (also called element selector) selects all elements of a specific type.
+            <br>
+          <div id="typeSelector">
+          <br />
+          <h2>
+            All
+            <b style="color: red; font-size: 35px">h1</b> heading is
+            apply in Type Selector. Which is aquamarine background colour.
+          </h2>
+        </div>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>#typeSelector h2 {
+  background-color: aquamarine;
+  padding: 2px;
+}
+
+&lt;div id=&quot;typeSelector&quot;&gt;
+  &lt;br /&gt;
+  &lt;h2&gt;
+    All
+    &lt;b style=&quot;color: red; font-size: 35px&quot;&gt;h1&lt;/b&gt;
+    heading is
+    apply in Type Selector. Which is aquamarine background colour.
+  &lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+          <section id="id" class="content-section">
+          <h3>3. Id Selector</h3>
+          <p>
+            The id selector uses the id attribute of an HTML element to select a specific element.
+            <br>
+          <div id="idSelector">
+          <h1>Id Selector</h1>
+          <br />
+          <h2 id="main-heading">Welcome to My Website</h2>
+          <p id="sub_section">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic molestiae cumque tempora laudantium eius quod numquam eligendi aliquam, consectetur magnam ducimus odio perferendis nisi iusto voluptas suscipit esse illum molestias provident quia asperiores, laborum aliquid placeat? Laborum assumenda voluptatem libero beatae, autem corporis dolores nobis numquam iusto ex placeat tempore rerum consectetur, quos eos ab, vero aperiam? Sunt, voluptate iste. Dolorem, dolorum beatae. Recusandae, repellendus, ad quia accusantium repellat ullam excepturi sapiente tempore officiis voluptas aspernatur. Quibusdam, ipsum sed corporis nemo explicabo porro ut voluptates! Sit, a? Minima dolorem excepturi quod expedita, saepe porro ipsum unde laborum at dignissimos sequi.
+          </p>
+        </div>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>#main-heading {
+  color: red;
+  text-align: center;
+  font-size: 24px;
+}
+
+#sub_section {
+  text-align: justify;
+  border: none;
+  color: black;
+}
+
+&lt;div id=&quot;idSelector&quot;&gt;
+  &lt;h1&gt;Id Selector&lt;/h1&gt;
+  &lt;br /&gt;
+  &lt;h2 id=&quot;main-heading&quot;&gt;Welcome to My Website&lt;/h2&gt;
+  &lt;p id=&quot;sub_section&quot;&gt;
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic molestiae
+    cumque tempora laudantium eius quod numquam eligendi aliquam, consectetur
+    magnam ducimus odio perferendis nisi iusto voluptas suscipit esse illum
+    molestias provident quia asperiores, laborum aliquid placeat? Laborum
+    assumenda voluptatem libero beatae, autem corporis dolores nobis numquam
+    iusto ex placeat tempore rerum consectetur, quos eos ab, vero aperiam?
+    Sunt, voluptate iste. Dolorem, dolorum beatae. Recusandae, repellendus,
+    ad quia accusantium repellat ullam excepturi sapiente tempore officiis
+    voluptas aspernatur. Quibusdam, ipsum sed corporis nemo explicabo porro
+    ut voluptates! Sit, a? Minima dolorem excepturi quod expedita, saepe porro
+    ipsum unde laborum at dignissimos sequi.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+          <section id="class" class="content-section">
+          <h3>4. Class Selector, Multiple Classes, CSS Pseudo-Element</h3>
+          <p>
+            The class selector uses the class attribute of an HTML element to select all elements with a specific class. <br>
+            Multiple classes can be applied to an element by separating them with spaces in the class attribute. <br>
+            CSS pseudo-elements allow you to style specific parts of an element, such as the first letter or the first line of text.
+            <br><br>
+
+            <div id="classSelector">
+          <br />
+          <form class="form">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              class="input-field"
+              required
+            /><br /><br />
+
+            <label for="age">Age:</label>
+            <input
+              type="number"
+              id="age"
+              class="input-field"
+              min="18"
+              max="60"
+            /><br /><br />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              class="input-field error"
+            /><br /><br />
+
+            <label for="subscribe">Subscribe:</label>
+            <input type="checkbox" id="subscribe" checked /><br /><br />
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" class="input-field" disabled></textarea
+            ><br /><br />
+
+            <input type="submit" value="Submit" />
+          </form>
+          <h4>News Paper Link</h4>
+          <a href="https://www.thedailystar.net/" class="link-example"
+            >Daily Star</a
+          >
+        </div>
+
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>.form {
+  background-color: violet;
+  margin: 20px;
+  padding: 10px;
+}
+
+.input-field {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+}
+
+&lt;div id=&quot;classSelector&quot;&gt;
+  &lt;h1&gt;
+    Example of Class selector ,Multiclass selector, CSS Pseudo-class in
+    this form
+  &lt;/h1&gt;
+  &lt;br /&gt;
+
+  &lt;form class=&quot;form&quot;&gt;
+    &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
+    &lt;input
+      type=&quot;text&quot;
+      id=&quot;name&quot;
+      class=&quot;input-field&quot;
+      required
+    /&gt;
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
+    &lt;input
+      type=&quot;number&quot;
+      id=&quot;age&quot;
+      class=&quot;input-field&quot;
+      min=&quot;18&quot;
+      max=&quot;60&quot;
+    /&gt;
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+    &lt;input
+      type=&quot;email&quot;
+      id=&quot;email&quot;
+      class=&quot;input-field error&quot;
+    /&gt;
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;label for=&quot;subscribe&quot;&gt;Subscribe:&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;subscribe&quot; checked /&gt;
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;label for=&quot;comments&quot;&gt;Comments:&lt;/label&gt;
+    &lt;textarea
+      id=&quot;comments&quot;
+      class=&quot;input-field&quot;
+      disabled
+    &gt;&lt;/textarea&gt;
+    &lt;br /&gt;&lt;br /&gt;
+
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+  &lt;/form&gt;
+
+  &lt;h4&gt;News Paper Link&lt;/h4&gt;
+  &lt;a
+    href=&quot;https://www.thedailystar.net/&quot;
+    class=&quot;link-example&quot;
+  &gt;
+    Daily Star
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+          <section id="pseudo-element" class="content-section">
+          <h3>5. CSS Pseudo-Element</h3>
+          <p>
+            CSS pseudo-elements allow you to style specific parts of an element, such as the first letter or the first line of text.
+            <br>
+            <br>
+          <div id="paseudoElement">
+          <br />
+          <b>::first-letter and ::first-line pseudo-elements.</b>
+          <p class="quote">Improtantce of learning CSS</p>
+          <p class="fistlater">
+            Learning CSS (Cascading Style Sheets) is important for several
+            reasons: <br />
+            Visual Design: CSS allows you to style and format the appearance of
+            your web pages. You can control colors, fonts, layouts, and more,
+            making your website visually appealing and user-friendly.
+          </p>
+          <p class="fistlater">
+            Separation of Content and Style: <br />
+            CSS helps separate the content (HTML) from the presentation (CSS).
+            This makes your code more organized and easier to maintain. You can
+            apply consistent styles across multiple web pages by linking a
+            single CSS file.
+          </p>
+        </div>
+          </p>
+            <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>.fistlater::first-letter {
+  font-size: 30px;
+  color: black;
+}
+
+.fistlater::first-line {
+  /* font-size: 40px; */
+  background-color: red;
+  color: white;
+}
+
+&lt;div id=&quot;paseudoElement&quot;&gt;
+  &lt;br /&gt;
+  &lt;b&gt;::first-letter and ::first-line pseudo-elements.&lt;/b&gt;
+
+  &lt;p class=&quot;quote&quot;&gt;Improtantce of learning CSS&lt;/p&gt;
+
+  &lt;p class=&quot;fistlater&quot;&gt;
+    Learning CSS (Cascading Style Sheets) is important for several
+    reasons: &lt;br /&gt;
+    Visual Design: CSS allows you to style and format the appearance of
+    your web pages. You can control colors, fonts, layouts, and more,
+    making your website visually appealing and user-friendly.
+  &lt;/p&gt;
+
+  &lt;p class=&quot;fistlater&quot;&gt;
+    Separation of Content and Style: &lt;br /&gt;
+    CSS helps separate the content (HTML) from the presentation (CSS).
+    This makes your code more organized and easier to maintain. You can
+    apply consistent styles across multiple web pages by linking a
+    single CSS file.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+          <section id="attribute" class="content-section">
+          <h3>6. CSS Attribute Selector</h3>
+          <p>
+            CSS attribute selectors allow you to select elements based on the presence or value of their attributes. <br>
+            They provide a powerful way to target specific elements without needing to add extra classes or IDs.
+
+            <br><br>
+        <div id="attributeSleector">
+          <h2>[attribute] Selector</h2>
+          <form action="#">
+            <label for="name">Name: </label>
+            <input type="text" placeholder="Enter your name" /><br />
+            <label for="password">Password: </label>
+            <input type="password" placeholder="Enter your password" />
+            <h2>[attribute="value"]</h2>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </form>
+          <br />
+          <h2>[attribute|="value"]</h2>
+          <p lang="en">
+            This paragraph has the lang attribute exactly equal to "en".
+          </p>
+          <p lang="en-US">
+            This paragraph has the lang attribute starting with "en-" (e.g.,
+            "en-US").
+          </p>
+          <p lang="fr">
+            This paragraph does not match the selector as its lang value is
+            "fr".
+          </p>
+          <br />
+          <h2>[attribute~="value"]</h2>
+          <p lang="en US">
+            This paragraph has the lang attribute starting with "en-" (e.g.,
+            "en-US").
+          </p>
+          <h2>[attribute^="value"]</h2>
+          <p lang="en-bd">
+            Dotted border style is applyed by [attribute^="value"] selector
+          </p>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code: </h4>
+            <pre><code>[placeholder] {
+  border: 3px solid red;
+  margin-bottom: 5px;
+}
+
+[type=&quot;submit&quot;] {
+  background-color: green;
+  color: white;
+}
+
+[type=&quot;reset&quot;] {
+  background-color: red;
+  color: white;
+}
+
+[lang|=&quot;en&quot;] {
+  border: 2px solid red;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+[lang~=&quot;US&quot;] {
+  background-color: red;
+  color: white;
+}
+
+[lang^=&quot;en&quot;] {
+  border-style: dotted;
+}
+
+&lt;h2&gt;[attribute] Selector&lt;/h2&gt;
+
+&lt;form action=&quot;#&quot;&gt;
+  &lt;label for=&quot;name&quot;&gt;Name: &lt;/label&gt;
+  &lt;input type=&quot;text&quot; placeholder=&quot;Enter your name&quot; /&gt;&lt;br /&gt;
+
+  &lt;label for=&quot;password&quot;&gt;Password: &lt;/label&gt;
+  &lt;input type=&quot;password&quot; placeholder=&quot;Enter your password&quot; /&gt;
+
+  &lt;h2&gt;[attribute=&quot;value&quot;]&lt;/h2&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;button type=&quot;reset&quot;&gt;Reset&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;br /&gt;
+
+&lt;h2&gt;[attribute|=&quot;value&quot;]&lt;/h2&gt;
+&lt;p lang=&quot;en&quot;&gt;
+  This paragraph has the lang attribute exactly equal to &quot;en&quot;.
+&lt;/p&gt;
+
+&lt;p lang=&quot;en-US&quot;&gt;
+  This paragraph has the lang attribute starting with &quot;en-&quot; (e.g.,
+  &quot;en-US&quot;).
+&lt;/p&gt;
+
+&lt;p lang=&quot;fr&quot;&gt;
+  This paragraph does not match the selector as its lang value is
+  &quot;fr&quot;.
+&lt;/p&gt;
+
+&lt;br /&gt;
+
+&lt;h2&gt;[attribute~=&quot;value&quot;]&lt;/h2&gt;
+&lt;p lang=&quot;en US&quot;&gt;
+  This paragraph has the lang attribute containing &quot;US&quot;.
+&lt;/p&gt;
+
+&lt;h2&gt;[attribute^=&quot;value&quot;]&lt;/h2&gt;
+&lt;p lang=&quot;en-bd&quot;&gt;
+  Dotted border style is applyed by [attribute^=&quot;value&quot;] selector
+&lt;/p&gt;</code></pre>
+          </div>
+        </section>
+
+        <div class="button">
+          <a href="chapter_09.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_11.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

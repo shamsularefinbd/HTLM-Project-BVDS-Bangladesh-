@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 18 - CSS Transition And Animations</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: kalpurush, sans-serif;
+  background-color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+.transition-box {
+  width: 150px;
+  padding: 15px;
+  background-color: chartreuse;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.basic-transition {
+  transition:
+    background-color 0.5s,
+    transform 0.5s;
+}
+.basic-transition:hover {
+  background-color: chartreuse;
+  transform: scale(1.05);
+}
+.delay-transition {
+  transition: width 3s;
+  transition-delay: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.delay-transition:hover {
+  width: 600px;
+}
+.timing-linear {
+  transition: margin-left 2s linear;
+}
+.timing-ease {
+  transition: margin-left 2s ease;
+}
+.timing-ease-in {
+  transition: margin-left 2s ease-in;
+}
+.timing-container:hover .timing-box {
+  margin-left: 700px;
+}
+.timing-box {
+  width: 100px;
+  height: 50px;
+  background-color: chartreuse;
+  margin-bottom: 5px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+@keyframes pulse-alert {
+  from {
+    background-color: chartreuse;
+  }
+  to {
+    background-color: chartreuse;
+  }
+}
+.anim-two-step {
+  animation-name: pulse-alert;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+@keyframes spin-loader {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: chartreuse(190, 7, 7);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: chartreuse(249, 70, 38);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: rgb(236, 146, 146);
+  }
+}
+.loader {
+  border: 5px solid rgb(234, 116, 116);
+  border-radius: 50%;
+  border-top: 5px solid chartreuse;
+  width: 40px;
+  height: 40px;
+  animation: spin-loader 2s linear infinite;
+}
+.anim-delay {
+  animation-name: slide-in;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(700px);
+  }
+}
+.anim-direction-alternate {
+  animation: bounce 3s infinite alternate;
+  background-color: chartreuse;
+  border: 2px solid chartreuse(158, 8, 8);
+  color: white;
+  padding: 15px;
+  width: 150px;
+  border-radius: 20px;
+}
+.timing-demo-container {
+  background-color: red;
+  padding: 15px;
+  border: 1px solid #830e0e;
+  border-radius: 8px;
+}
+.timing-row {
+  margin-bottom: 15px;
+}
+.timing-label {
+  font-weight: bold;
+  font-family: monospace;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+.progress-track {
+  width: 100%;
+  height: 20px;
+  background-color: chartreuse;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid chartreuse(156, 9, 9);
+}
+.progress-bar {
+  width: 20%;
+  height: 100%;
+  background-color: chartreuse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: move-bar;
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-delay-example {
+  color: white;
+  font-weight: bold;
+  background-color:chartreuse;
+  padding: 8px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  animation-name: fade-in-up;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes spin-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-infinite {
+  border: 4px solid #e0e0e0; 
+  border-top: 4px solid chartreuse; 
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation-name: spin-forever;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.timing-demo-container {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.timing-row {
+  margin-bottom: 15px;
+}
+.timing-label {
+  font-weight: bold;
+  font-family: monospace;
+  color: #004d99;
+  display: block;
+  margin-bottom: 5px;
+}
+.progress-track {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+.progress-bar {
+  width: 20%;
+  height: 100%;
+  background-color: chartreuse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: move-bar;
+}
+@keyframes move-bar {
+  from {
+    margin-left: 0%;
+    width: 20%;
+  }
+  to {
+    margin-left: 80%;
+    width: 20%;
+  }
+}
+.timing-linear-anim {
+  animation-timing-function: linear;
+}
+.timing-ease-anim {
+  animation-timing-function: ease;
+}
+.timing-steps-anim {
+  animation-timing-function: steps(5);
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 18</h1>
+        <p style="font-size: 21px; color: white">
+          CSS Transition And Animations
+        </p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#CSSTransitions">1. CSS Transitions</a></li>
+            <li>
+              <a href="#CSSAnimations">2. CSS Animations</a>
+            </li>
+          </ol>
+        </nav> 
+      </aside>
+
+      <main class="content">
+        <section id="CSSTransitions" class="content-section">
+          <h3>1. CSS Transitions</h3>
+          <p>
+            CSS transitions allow you to smoothly change property values over a
+            specified duration. You can control the timing, delay, and easing
+            of the transition to create various effects. For example, you can
+            create a hover effect that changes the background color and scales
+            an element when the user hovers over it. Transitions are a great way
+            to enhance the interactivity of your website without needing complex
+            JavaScript.
+            <br>
+            <div id="cssTransitions">
+          <div id="basicTrans">
+            <h4>Basic Transitions</h4><br>
+            <div class="transition-box basic-transition">
+              Hover Me<br />(Color & Scale)
+            </div>
+          </div>
+
+          <div id="transDelay">
+            <h4>Transition Delay</h4><br>
+            <div class="transition-box delay-transition">
+              Hover & Wait (0.5s Delay) -> Expands
+            </div>
+          </div>
+
+          <div id="transTiming">
+            <h4>Transition Timing Function</h4>
+            <p>
+              Controls the speed curve of the transition (Hover the container
+              below).
+            </p>
+            <div
+              class="timing-container"
+              style="border: 1px dashed chartreuse; padding: 10px"
+            >
+              <div class="timing-box timing-linear">Linear</div>
+              <div class="timing-box timing-ease">Ease</div>
+              <div class="timing-box timing-ease-in">Ease-In</div>
+            </div>
+          </div><br>
+
+          <div id="transShorthand">
+            <h4>Shorthand Transition Property</h4>
+            <p>
+              <code>transition: [property] [duration] [timing] [delay];</code
+              ><br />
+              Example: <code>transition: all 0.3s ease-in-out;</code>
+            </p>
+          </div>
+        </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.transition-box {
+  width: 150px;
+  padding: 15px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.basic-transition {
+  transition:
+    background-color 0.5s,
+    transform 0.5s;
+}
+.basic-transition:hover {
+  background-color: #980a0a;
+  transform: scale(1.05);
+}
+.delay-transition {
+  transition: width 3s;
+  transition-delay: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.delay-transition:hover {
+  width: 600px;
+}
+.timing-linear {
+  transition: margin-left 2s linear;
+}
+.timing-ease {
+  transition: margin-left 2s ease;
+}
+.timing-ease-in {
+  transition: margin-left 2s ease-in;
+}
+.timing-container:hover .timing-box {
+  margin-left: 700px;
+}
+.timing-box {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  margin-bottom: 5px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}</code></pre>
+          </div>
+        </section> 
+
+        <section id="CSSAnimations" class="content-section">
+          <h3>2. CSS Animations</h3>
+          <p>
+            CSS animations allow you to create complex animations by defining keyframes
+            that specify the styles at various points during the animation sequence. You can control the duration, timing, iteration count, and direction of the animation. For example, you can create a pulsing alert effect by animating the background color of an element or a spinning loader by animating its rotation. CSS animations provide a powerful way to add dynamic visual effects to your website without relying on JavaScript.
+            <br>
+          <div id="cssAnimations">
+          <div id="twoStep">
+            <h4>Two-step Keyframes (from/to)</h4><br>
+            <div class="anim-two-step">CRITICAL ALERT (Pulsing Red)</div>
+          </div>
+          <br>
+          <div id="multiStep">
+            <h4>Multiple Keyframes (0% - 100%)</h4>
+            <p>Processing Transaction...</p>
+            <div class="loader"></div>
+          </div>
+          <br>
+          <div id="animDelay">
+            <h4>Animation Delay</h4>
+            <p>
+              The `animation-delay` property specifies a delay for the start of
+              an animation. This is useful for sequencing elements, like showing
+              a success message *after* a process completes.
+            </p>
+
+            <div
+              style="
+                background-color: #f9f9f9;
+                padding: 20px;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                height: 80px;
+                position: relative;
+              "
+            >
+              <div class="anim-delay-example">
+                🫀 Heart beat!....
+              </div>
+            </div>
+            <br>
+            <div id="animIter">
+            <h4>Animation Iteration Count</h4>
+            <p>
+              The `animation-iteration-count` property defines how many times an
+              animation should play. Setting it to `infinite` creates a
+              continuous loop, essential for status indicators like loading
+              spinners or pulsing alerts.
+            </p>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                background-color: #f9f9f9;
+                padding: 20px;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+              "
+            >
+              <div class="loader-infinite"></div>
+              <div>
+                <strong style="color: chartreuse;">Processing Transaction...</strong><br />
+                <small>animation-iteration-count: infinite;</small>
+              </div>
+            </div>
+            <br>
+            <div id="animDir">
+            <h4>Animation Direction</h4><br>
+            <div class="anim-direction-alternate">Ping Pong</div>
+            <br>
+            <p><code>alternate</code> plays forward then backward.</p>
+          </div>
+          <br>
+          <div id="animTiming">
+            <h4>Animation Timing Function</h4>
+            <p>
+              The `animation-timing-function` property specifies the speed curve
+              of the animation. This is crucial for creating natural-feeling UI
+              interactions.
+            </p>
+
+            <div class="timing-demo-container">
+              <div class="timing-row">
+                <span class="timing-label">linear</span>
+                <div class="progress-track">
+                  <div class="progress-bar timing-linear-anim"></div>
+                </div>
+              </div>
+
+              <div class="timing-row">
+                <span class="timing-label">ease</span>
+                <div class="progress-track">
+                  <div class="progress-bar timing-ease-anim"></div>
+                </div>
+              </div>
+
+              <div class="timing-row">
+                <span class="timing-label">steps(4)</span>
+                <div class="progress-track">
+                  <div class="progress-bar timing-steps-anim"></div>
+                </div>
+              </div>
+            </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>@keyframes pulse-alert {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: #ff6666;
+  }
+}
+.anim-two-step {
+  animation-name: pulse-alert;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+@keyframes spin-loader {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: rgb(190, 7, 7);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: rgb(249, 70, 38);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: rgb(236, 146, 146);
+  }
+}
+.loader {
+  border: 5px solid rgb(234, 116, 116);
+  border-radius: 50%;
+  border-top: 5px solid red;
+  width: 40px;
+  height: 40px;
+  animation: spin-loader 2s linear infinite;
+}
+.anim-delay {
+  animation-name: slide-in;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(700px);
+  }
+}
+.anim-direction-alternate {
+  animation: bounce 3s infinite alternate;
+  background-color: red;
+  border: 2px solid rgb(158, 8, 8);
+  color: white;
+  padding: 15px;
+  width: 150px;
+  border-radius: 20px;
+}
+.timing-demo-container {
+  background-color: red;
+  padding: 15px;
+  border: 1px solid #830e0e;
+  border-radius: 8px;
+}
+.timing-row {
+  margin-bottom: 15px;
+}
+.timing-label {
+  font-weight: bold;
+  font-family: monospace;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+.progress-track {
+  width: 100%;
+  height: 20px;
+  background-color: red;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgb(156, 9, 9);
+}
+.progress-bar {
+  width: 20%;
+  height: 100%;
+  background-color: red;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: move-bar;
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-delay-example {
+  color: white;
+  font-weight: bold;
+  background-color:red;
+  padding: 8px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  animation-name: fade-in-up;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes spin-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-infinite {
+  border: 4px solid #e0e0e0; 
+  border-top: 4px solid #83010c; 
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation-name: spin-forever;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.timing-demo-container {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.timing-row {
+  margin-bottom: 15px;
+}
+.timing-label {
+  font-weight: bold;
+  font-family: monospace;
+  color: #004d99;
+  display: block;
+  margin-bottom: 5px;
+}
+.progress-track {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+.progress-bar {
+  width: 20%;
+  height: 100%;
+  background-color: red;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: move-bar;
+}
+@keyframes move-bar {
+  from {
+    margin-left: 0%;
+    width: 20%;
+  }
+  to {
+    margin-left: 80%;
+    width: 20%;
+  }
+}
+.timing-linear-anim {
+  animation-timing-function: linear;
+}
+.timing-ease-anim {
+  animation-timing-function: ease;
+}
+.timing-steps-anim {
+  animation-timing-function: steps(5);
+}
+</code></pre>
+          </div>
+        </section>
+
+
+        <div class="button">
+          <a href="chapter_17.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_19.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

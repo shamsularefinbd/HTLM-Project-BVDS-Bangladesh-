@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মিডিয়া সেকশন | বিভিডিএস বাংলাদেশ</title>
+  <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+   <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1>আমাদের কার্যক্রমের খণ্ডচিত্র</h1>
+        <p>ছবি এবং ভিডিওর মাধ্যমে আমাদের কাজের প্রতিফলন</p>
+    </header>
+    <div class="container">
+      <h1>গ্যালারী মিডিয়া</h1>
+      <p>আমাদের সংগঠনের কার্যক্রম এবং ইভেন্টগুলির ছবি এবং ভিডিও এখানে পাওয়া যাবে। আমরা আমাদের সম্প্রদায়ের সাথে আমাদের কাজের গল্প শেয়ার করতে পছন্দ করি এবং আমোদের এই গ্যালারী মিডিয়া সেকশন সেই উদ্দেশ্যে তৈরি করা হয়েছে। এখানে আপনি আমাদের বিভিন্ন কার্যক্রমের ছবি এবং ভিডিও দেখতে পাবেন, যা আমাদের সংগঠনের মিশন এবং ভিশনকে তুলে ধরে। আমরা আশা করি যে, এই গ্যালারী মিডিয়া সেকশন আপনাকে আমাদের কাজের সাথে আরও সংযুক্ত করবে এবং আমাদের সংগঠনের প্রভাব সম্পর্কে একটি স্পষ্ট ধারণা দেবে।</p>
+    <main class="container_media">
+         <h2>আমাদের কার্যক্রমের ছবি</h2>
+        <h2>ফটো গ্যালারি</h2>
+        <section class="slider-container">
+          <div class="slider">
+              <div class="slide_active">
+                  <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000" alt="রক্তদান">
+                  <div class="slide-caption">রক্তদান কর্মসূচি ২০২৪</div>
+              </div>
+              <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000" alt="বনায়ন">
+                  <div class="slide-caption">আমাদের বনায়ন প্রকল্প</div>
+              </div>
+              <div class="slide">
+                  <img src="Images/Education Exe.jpg" alt="শিক্ষা" >
+                  <img src="Images/Education.webp" alt="শিক্ষা">
+                  <img src="Images/eDU.jpg" alt="শিক্ষা">
+                  <div class="slide-caption">শিক্ষা উপকরণ বিতরণ</div>
+              </div>
+          </div>
+
+          <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </section>
+
+        <h2 style="margin-top: 50px;">ভিডিও গ্যালারি</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <div class="video-caption">
+                    <h4>আমাদের প্রথম ভিডিও</h4>
+                <iframe width="100%" height="520" src="Video/at first Bangladesh.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-caption">
+                    <h4>আমাদের দ্বিতীয় ভিডিও</h4>
+                <iframe width="100%" height="520" src="Video/16 December.mp4" frameborder="0" allowfullscreen, controls muted autoplay loop></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+</body>
+</html>

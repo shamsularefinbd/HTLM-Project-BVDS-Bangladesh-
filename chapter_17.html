@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 17 - CSS Layout</title>
+    <link rel="icon" type="image/x-icon" href="icon/bvds icon.png" />
+    <link rel="stylesheet" href="Chapter.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: kalpurush, sans-serif;
+        background-color: white;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .cssPosition {
+        border: 5px solid chartreuse;
+        border-radius: 20px;
+        width: 500px;
+        height: 200px;
+        color: white;
+        font-size: 18px;
+        padding: 25px;
+      }
+      .css {
+        width: 100px;
+        background-color: chartreuse;
+        margin: 10px;
+      }
+      .static {
+        position: static;
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .relative {
+        position: relative;
+        top: 2px;
+        left: 200px;
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .absolute {
+        position: absolute;
+        top: 240px;
+        right: 600px;
+        
+      }
+      .fixed {
+        position: fixed;
+        top: 290px;
+        right: 600px;
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .sticky {
+        position: sticky;
+        top: 0;
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .float {
+        border: 3px dotted chartreuse;
+        width: 400px;
+        height: 50px;
+      }
+      .floatLeft {
+        border: 1px solid chartreuse;
+        margin: 2px;
+        float: left;
+      }
+      .floatRight {
+        border: 1px solid chartreuse;
+        margin: 2px;
+        float: right;
+      }
+      .flex {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        border: 2px solid chartreuse;
+        gap: 20px;
+      }
+      .flex p {
+        border: 1px solid chartreuse;
+        margin: 5px;
+        text-align: left;
+        padding: 2px;
+      }
+      .flexColumnReverse {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 500px;
+        border: 2px solid chartreuse;
+        gap: 20px;
+      }
+      .flexColumnReverse p {
+        border: 1px solid chartreuse;
+        margin: 5px;
+        text-align: left;
+        padding: 2px;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        column-gap: 5px;
+        row-gap: 5px;
+      }
+      .grid-item {
+        border: 1px solid chartreuse;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        column-gap: 5px;
+        row-gap: 5px;
+      }
+
+      .justify-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        border: 2px solid chartreuse;
+        width: 450px;
+        height: 300px;
+        padding: 10px;
+      }
+
+      .justify-item {
+        background-color: rgb(0, 187, 250);
+        padding: 10px;
+        border: 1px solid chartreuse;
+      }
+
+      .start {
+        justify-items: start;
+      }
+
+      .end {
+        justify-items: end;
+      }
+
+      .center {
+        justify-items: center;
+      }
+
+      .align-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        border: 2px solid chartreuse;
+        width: 450px;
+        height: 300px;
+        padding: 10px;
+      }
+
+      .align-item {
+        background-color: chartreuse(250, 4, 4);
+        padding: 10px;
+        border: 1px solid chartreuse(83, 39, 39);
+      }
+
+      .start {
+        justify-items: start;
+        align-items: start;
+      }
+
+      .end {
+        justify-items: end;
+        align-items: end;
+      }
+
+      .center {
+        justify-items: center;
+        align-items: center;
+      }
+
+      .justifyContent-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 25px;
+        border: 2px solid chartreuse;
+        width: 800px;
+        height: 500px;
+        padding: 10px;
+      }
+
+      .justifyContent-item {
+        background-color: chartreuse;
+        padding: 10px;
+        border: 1px solid chartreuse(77, 33, 33);
+        color: white;
+      }
+
+      .start {
+        justify-items: start;
+        align-items: start;
+        justify-content: start;
+      }
+
+      .end {
+        justify-items: end;
+        align-items: end;
+        justify-content: end;
+      }
+
+      .center {
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+      }
+      .space-Between {
+        justify-items: center;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .alignContent-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        border: 2px solid chartreuse;
+        width: 450px;
+        height: 300px;
+        padding: 10px;
+      }
+
+      .alignContent-item {
+        background-color: chartreuse;
+        padding: 10px;
+        border: 1px solid chartreuse(93, 29, 35);
+      }
+
+      .start {
+        justify-items: start;
+        align-items: start;
+        justify-content: start;
+        align-items: start;
+      }
+
+      .end {
+        justify-items: end;
+        align-items: end;
+        justify-content: end;
+        align-items: end;
+      }
+
+      .center {
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+      }
+      #horizontalAlignment {
+        border: 3px solid chartreuse;
+        width: 300px;
+        height: 60px;
+      }
+      #ha {
+        border: 3px solid chartreuse;
+        width: 150px;
+        margin: auto;
+      }
+      #verticalAlignment {
+        border: 3px solid chartreuse;
+        width: 300px;
+      }
+      #va {
+        border: 3px solid chartreuse;
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      #perfectCentaring {
+        position: relative;
+        border: 3px solid chartreuse;
+        width: 300px;
+        height: 150px;
+      }
+      #pc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 3px solid chartreuse;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="welcome">
+      <div>
+        <h1>Chapter 17</h1>
+        <p style="font-size: 21px; color: white">CSS Layout</p>
+      </div>
+    </section>
+
+    <div class="mainc">
+      <aside class="sidebar">
+        <h3 class="tableofcontent">Table of Contents</h3>
+        <nav
+          class="tableNav"
+          style="
+            background-color: white;
+            border: 3px solid chartreuse;
+            border-radius: 15px;
+          "
+        >
+          <ol>
+            <li><a href="#Position">1. CSS Position</a></li>
+            <li>
+              <a href="#Float">2. CSS Float</a>
+            </li>
+            <li>
+              <a href="#Flexbox">3. CSS Flexbox</a>
+            </li>
+            <li>
+              <a href="#Grid">4. CSS Grid</a>
+            </li>
+            <li>
+              <a href="#Alignment">5. CSS Alignment</a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="Position" class="content-section">
+          <h3>1. CSS Position</h3>
+          <p>
+            CSS position property is used to specify the positioning of an
+            element on a webpage. It allows you to control how an element is
+            positioned in relation to its normal flow, its parent container, or
+            the viewport. The different values for the position property include
+            static, relative, absolute, fixed, and sticky. Each value has its
+            own behavior and use cases, allowing developers to create complex
+            layouts and designs.
+            <br />
+            <div id="cssPosition">
+          <h1>CSS Position</h1>
+          <hr />
+          <br />
+          <div class="cssPosition">
+            <div class="css static">Static</div>
+            <div class="css relative">Relative</div>
+            <div class="css absolute">Absolute</div>
+            <div class="css fixed">Fixed</div>
+            <div class="css sticky">Sticky</div>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.cssPosition {
+  border: 5px solid red;
+  border-radius: 20px;
+  width: 500px;
+  height: 200px;
+  color: white;
+  font-size: 18px;
+  padding: 25px;
+}
+.css {
+  width: 100px;
+  background-color: red;
+  margin: 10px;
+}
+.static {
+  position: static;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.relative {
+  position: relative;
+  top: 2px;
+  left: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.absolute {
+  position: absolute;
+  top: 240px;
+  right: 600px;
+  
+}
+.fixed {
+  position: fixed;
+  top: 290px;
+  right: 600px;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Float" class="content-section">
+          <h3>2. CSS Float</h3>
+          <p>
+            CSS float property is used to position an element to the left or right
+            of its container, allowing other elements to flow around it. The float
+            property can take values like left, right, none, and inherit. When an
+            element is floated, it is taken out of the normal document flow and
+            shifted to the specified side of its container. This behavior is useful
+            for creating layouts with multiple columns or for aligning images within
+            text content.
+            <br>
+          <div class="float">
+            <p class="floatLeft">Float left</p>
+            <p class="floatRight">Float right</p>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.float {
+  border: 3px dotted red;
+  width: 400px;
+  height: 50px;
+}
+.floatLeft {
+  border: 1px solid red;
+  margin: 2px;
+  float: left;
+}
+.floatRight {
+  border: 1px solid red;
+  margin: 2px;
+  float: right;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Flexbox" class="content-section">
+          <h3>3. CSS Flexbox</h3>
+          <p>
+            CSS Flexbox is a layout model that allows for flexible and responsive
+            design of web pages. It provides an efficient way to distribute space
+            and align items within a container, even when their size is unknown or
+            dynamic. The flex container's children (flex items) can be aligned in
+            various ways, such as along the main axis or cross axis, and can be
+            distributed with different spacing rules.
+            <br>
+            <h4>Flexbox Row</h4><br>
+          <div class="flex">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              eveniet ut quo pariatur, minus natus quae ex dignissimos incidunt
+              esse, quaerat, nisi corrupti mollitia harum exercitationem dicta.
+              Culpa voluptatum, consequatur pariatur ex esse repudiandae porro.
+              Distinctio, ipsum saepe quos eos magni dolorum iure vel ipsam
+              accusantium quod explicabo, non quisquam?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Recusandae dignissimos laudantium consectetur error fuga harum
+              consequatur iure, voluptatem ipsam neque modi tempora! Voluptas
+              nisi commodi autem magni soluta nostrum amet aliquam, rem aliquid
+              distinctio in. Esse, deleniti autem ex distinctio facere est sequi
+              maxime fugiat temporibus eaque iure, soluta accusantium?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+              vitae at sapiente eveniet culpa omnis provident maiores dolorem.
+              Minima, quaerat provident! Eius amet nihil illo laudantium unde
+              ducimus hic adipisci beatae recusandae, corporis fugiat ut
+              voluptates maxime placeat odit voluptatem labore saepe. Earum sunt
+              aperiam labore, quibusdam placeat aut excepturi!
+            </p>
+          </div>
+          <br><h4>Flexbox Column Reverse</h4><br>
+          <div class="flexColumnReverse">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              eveniet ut quo pariatur, minus natus quae ex dignissimos incidunt
+              esse, quaerat, nisi corrupti mollitia harum exercitationem dicta.
+              Culpa voluptatum, consequatur pariatur ex esse repudiandae porro.
+              Distinctio, ipsum saepe quos eos magni dolorum iure vel ipsam
+              accusantium quod explicabo, non quisquam?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Recusandae dignissimos laudantium consectetur error fuga harum
+              consequatur iure, voluptatem ipsam neque modi tempora! Voluptas
+              nisi commodi autem magni soluta nostrum amet aliquam, rem aliquid
+              distinctio in. Esse, deleniti autem ex distinctio facere est sequi
+              maxime fugiat temporibus eaque iure, soluta accusantium?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+              vitae at sapiente eveniet culpa omnis provident maiores dolorem.
+              Minima, quaerat provident! Eius amet nihil illo laudantium unde
+              ducimus hic adipisci beatae recusandae, corporis fugiat ut
+              voluptates maxime placeat odit voluptatem labore saepe. Earum sunt
+              aperiam labore, quibusdam placeat aut excepturi!
+            </p>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.flex {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  border: 2px solid red;
+  gap: 20px;
+}
+.flex p {
+  border: 1px solid red;
+  margin: 5px;
+  text-align: left;
+  padding: 2px;
+}
+.flexColumnReverse {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 500px;
+  border: 2px solid red;
+  gap: 20px;
+}
+.flexColumnReverse p {
+  border: 1px solid red;
+  margin: 5px;
+  text-align: left;
+  padding: 2px;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Grid" class="content-section">
+          <h3>4. CSS Grid</h3>
+          <p>
+            CSS Grid is a powerful layout system that allows developers to create
+            complex and responsive web designs with ease. It provides a two-dimensional
+            grid-based layout system, enabling the arrangement of elements in rows and
+            columns. With CSS Grid, you can define grid containers and grid items, and
+            specify how they should be positioned and sized within the grid. This makes
+            it easier to create dynamic layouts that adapt to different screen sizes and
+            devices.
+          </p>
+          <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item">12</div>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+.grid-item {
+  border: 1px solid red;
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="Alignment" class="content-section">
+          <h3>5. CSS Alignment</h3>
+          <p>
+            CSS alignment properties are used to control the positioning and alignment
+            of elements within a container. These properties include justify-items,
+            align-items, justify-content, and align-content. They allow developers to
+            specify how items should be aligned along the main axis and cross axis of a
+            container, as well as how space should be distributed between items. Proper
+            use of CSS alignment can enhance the visual appeal and usability of a web
+            page by ensuring that elements are positioned in a way that is visually
+            pleasing and easy to navigate.
+          </p>
+          <div class="justifyContent-container">
+            <div class="justifyContent-item start">Start</div>
+            <div class="justifyContent-item end">End</div>
+            <div class="justifyContent-item center">Center</div>
+            <div class="justifyContent-item space-Between">Space Between</div>
+          </div>
+          </p>
+          <div class="example-box">
+            <h4>Code:</h4>
+            <pre><code>.justifyContent-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  border: 2px solid red;
+  width: 450px;
+  height: 300px;
+  padding: 10px;
+}
+.justifyContent-item {
+  background-color: red(0, 187, 250);
+  padding: 10px;
+  border: 1px solid rgb(77, 40, 40);
+}
+.start {
+  justify-items: start;
+  align-items: start;
+  justify-content: start;
+}
+.end {
+  justify-items: end;
+  align-items: end;
+  justify-content: end;
+}
+.center {
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.space-Between {
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+}</code></pre>
+          </div>
+        </section>
+        <div class="button">
+          <a href="chapter_16.html" class="btn">&#8592; Previous</a>
+          <a href="chapter_18.html" class="btn">Next &#8594;</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> নিবন্ধন | বিভিডিএস বাংলাদেশ</title>
+  <link rel="icon" type="image/x-icon" href="icon/bvds icon.png">
+  <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+  <nav>
+        <div class="logo">
+            <img src="Images/BVDS Logo.jpg" alt="BVDS Logo" class="logo-image">
+            <h2> বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h2>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+           <li><a href="index.html">হোম</a></li>
+            <li><a href="activities.html">কার্যক্রম</a></li>
+            <li><a href="media.html">গ্যালারী মিডিয়া</a></li>
+            <li><a href="registration.html">সদস্য</a></li>
+            <li><a href="donor-list.html">রক্তদাতা</a></li>
+            <li><a href="popular-books.html">জনপ্রিয় বই</a></li>
+            <li><a href="about.html">সম্পর্কে</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+      <h1 style="color: #ff0000;">বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি</h1>
+      <h1>স্বেচ্ছাসেবী হিসেবে যোগ দিন</h1>
+      <h2>সদস্য নিবন্ধন ফর্ম</h2>
+      <form action="submit_registration.html" method="POST">
+        <label for="name">পূর্ণ নাম:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="fname">পিতার নাম:</label>
+        <input type="text" id="fname" name="fname" required>
+
+        <label for="mname">মাতার নাম:</label>
+        <input type="text" id="mname" name="mname" required>
+
+        <label for="dob">জন্ম তারিখ:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="age">বয়স:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="Gender">লিঙ্গ:</label>
+        <select id="Gender" name="Gender" required>
+          <option value="male">পুরুষ</option>
+          <option value="female">মহিলা</option>
+          <option value="other">অন্যান্য</option>
+        </select>
+
+        <label for="religion">ধর্ম:</label>
+        <select id="religion" name="religion" required>
+          <option value="islam">ইসলাম</option>
+          <option value="hinduism">হিন্দু</option>
+          <option value="christianity">খ্রিস্টান</option>
+          <option value="buddhism">বৌদ্ধ</option>
+        </select>
+
+        <label for="maritial_status">বৈবাহিক অবস্থা:</label>
+        <select id="maritial_status" name="maritial_status" required>
+          <option value="single">অবিবাহিত</option>
+          <option value="married">বিবাহিত</option>
+          <option value="divorced">বিবাহ বিচ্ছেদ</option>
+        </select>
+
+        <label for="blood_group">রক্তের গ্রুপ:</label>
+        <select id="blood_group" name="blood_group" required>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+
+        <label for="NID/Birth Certificate No">এনআইডি/জন্ম নিবন্ধন নম্বর:</label>
+        <input type="text" id="NID/Birth Certificate No" name="NID/Birth Certificate No" required>
+
+        <label for="email">ইমেইল ঠিকানা:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">মোবাইল নম্বর:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">বর্তমান ঠিকানা:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="interests">আপনার আগ্রহের ক্ষেত্রসমূহ:</label>
+        <select id="interests" name="interests" multiple required>
+          <option value="blood_donation">রক্তদান</option>
+          <option value="education">শিক্ষা</option>
+          <option value="healthcare">স্বাস্থ্যসেবা</option>
+          <option value="environment">পরিবেশ সংরক্ষণ</option>
+        </select><br>
+
+        <div class="conditions">
+          <label for="T&C"></label>
+          <input type="checkbox" id="T&C" name="T&C" required>
+          <label for="T&C">আমি এইমর্মে অঙ্গীকার করিতেছি যে, ওপরে বর্ণিত তথ্যাবলি সম্পূর্ণ সত্য। সাক্ষাতের সময় উল্লেখিত তথ্য প্রমানের জন্য মূল সার্টিফিকেট ও রেকর্ডপত্র উপস্থাপন করব। আমি স্ব-জ্ঞানে সুস্থ্য মস্তিষ্কে বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি সংগঠনের গঠনতন্ত্র পড়ে, শুনে, জেনে, স্বেচ্ছায় সকল সার্ভিস শর্তাবলী মেনে নিয়ে এই সংগঠনে একজন সদস্য হওয়ার জন্য সম্মতি জানাচ্ছি।</label>
+        </div>
+        <button type="submit">নিবন্ধন করুন</button>
+      </form>
+    </div>
+    <footer>
+        <p>কপিরাইট &copy; ২০২৬ বড়বাইশদিয়া ভিলেজ ডেভেলপমেন্ট সোসাইটি | কর্তৃক সর্বস্বত্ব সংরক্ষিত</p>
+        <address>
+        <p>বড়বাইশদিয়া,রাঙ্গাবালী,পটুয়াখালী</p>
+        <p>
+          <a href="Call:01747778385">হেল্প লাইন</a> |
+          <a href="bvdsbangladesh@gmail.com">সিকিউরিটি অপারেশনস</a>
+        </p>
+        </address>
+    </footer>
+</body>
+</html>
