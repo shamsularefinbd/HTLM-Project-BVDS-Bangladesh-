@@ -4,12 +4,6 @@
 
 ---
 
-## 🌐 Live Website
-
-> Deploy your site and add the link here: `https://your-username.github.io/bvds-website`
-
----
-
 ## 📖 About
 
 BVDS was founded on **3rd March 2022** by **Shamsul Arefin** in the island region of Patuakhali district (known as *Sagarkanya*). The organization unites youth volunteers to bring positive change to rural Bangladesh through healthcare, education, and social development.
